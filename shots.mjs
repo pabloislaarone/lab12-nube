@@ -28,7 +28,7 @@ await u.click('a.room-card >> nth=0'); await shot(u, '05-sala-ranking');
 await u.click('button:has-text("Miembros")'); await shot(u, '06-sala-miembros');
 await u.goto(B + '/unirse/DEMO2026'); await shot(u, '07-invitacion');
 await u.goto(B + '/ranking'); await shot(u, '08-ranking-global');
-await u.goto(B + '/estadisticas'); await shot(u, '09-estadisticas');
+await u.goto(B + '/estadisticas'); await u.waitForSelector('.insight', { timeout: 15000 }).catch(() => {}); await shot(u, '09-estadisticas', true);
 await u.goto(B + '/reglas'); await shot(u, '10-reglas', true);
 // Admin
 const a = await session('admin@marcador.pe', 'admin123');
