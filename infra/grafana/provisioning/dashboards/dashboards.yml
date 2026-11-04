@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: polla
+    folder: Polla Mundialista
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards
