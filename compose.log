@@ -1,0 +1,668 @@
+api-1     | 
+api-1     |   .   ____          _            __ _ _
+api-1     |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-1     | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-1     |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-1     |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-1     |  =========|_|==============|___/=/_/_/_/
+api-1     | 
+api-1     |  :: Spring Boot ::                (v3.5.6)
+api-1     | 
+api-1     | 2026-11-04T15:09:06.263Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-1     | 2026-11-04T15:09:06.274Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-1     | 2026-11-04T15:09:10.052Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+api-1     | 2026-11-04T15:09:10.079Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-1     | 2026-11-04T15:09:10.179Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 0 Redis repository interfaces.
+worker-2  | 
+worker-2  |   .   ____          _            __ _ _
+worker-2  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+worker-2  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+worker-2  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+worker-2  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+worker-2  |  =========|_|==============|___/=/_/_/_/
+worker-2  | 
+worker-2  |  :: Spring Boot ::                (v3.5.6)
+worker-2  | 
+worker-2  | 2026-11-04T15:09:29.257Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Starting WorkerApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+worker-2  | 2026-11-04T15:09:29.260Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : No active profile set, falling back to 1 default profile: "default"
+worker-2  | 2026-11-04T15:09:35.171Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+worker-2  | 2026-11-04T15:09:35.173Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+worker-2  | 2026-11-04T15:09:35.277Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+worker-2  | 2026-11-04T15:09:38.165Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+worker-2  | 2026-11-04T15:09:38.177Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+worker-2  | 2026-11-04T15:09:38.177Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+worker-2  | 2026-11-04T15:09:38.659Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-1     | 2026-11-04T15:09:12.297Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-1     | 2026-11-04T15:09:12.315Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-1     | 2026-11-04T15:09:12.316Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-3     | 
+api-3     |   .   ____          _            __ _ _
+api-3     |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+worker-2  | 2026-11-04T15:09:38.660Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9091 ms
+api-3     | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+worker-2  | 2026-11-04T15:09:45.561Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+api-3     |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+worker-2  | 2026-11-04T15:09:46.062Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+worker-2  | 2026-11-04T15:09:46.067Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+api-3     |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-3     |  =========|_|==============|___/=/_/_/_/
+api-1     | 2026-11-04T15:09:12.580Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+worker-1  | 
+api-1     | 2026-11-04T15:09:12.582Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6156 ms
+worker-1  |   .   ____          _            __ _ _
+api-1     | 2026-11-04T15:09:14.393Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+worker-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+worker-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-3     | 
+worker-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+worker-2  | 2026-11-04T15:09:46.269Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#53df7e67:0/SimpleConnection@68f75a35 [delegate=amqp://marcador@172.18.0.3:5672/, localPort=56550]
+worker-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.059 urt=1.059
+worker-1   |  =========|_|==============|___/=/_/_/_/
+worker-1   | 
+worker-1   |  :: Spring Boot ::                (v3.5.6)
+worker-1   | 
+worker-1   | 2026-11-04T15:09:29.227Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Starting WorkerApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+worker-1   | 2026-11-04T15:09:29.229Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : No active profile set, falling back to 1 default profile: "default"
+worker-1   | 2026-11-04T15:09:35.026Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+worker-1   | 2026-11-04T15:09:35.029Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+worker-1   | 2026-11-04T15:09:35.134Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+worker-1   | 2026-11-04T15:09:37.830Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+worker-1   | 2026-11-04T15:09:37.922Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+worker-1   | 2026-11-04T15:09:37.923Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+worker-1   | 2026-11-04T15:09:38.323Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+worker-1   | 2026-11-04T15:09:38.325Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8804 ms
+worker-1   | 2026-11-04T15:09:45.530Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+worker-1   | 2026-11-04T15:09:46.116Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+worker-1   | 2026-11-04T15:09:46.121Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+worker-1   | 2026-11-04T15:09:46.238Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#53df7e67:0/SimpleConnection@68f75a35 [delegate=amqp://marcador@172.18.0.3:5672/, localPort=34204]
+worker-1   | 2026-11-04T15:09:46.537Z  INFO [0d8a58472262] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Started WorkerApplication in 19.904 seconds (process running for 22.14)
+worker-1   | 2026-11-04T15:09:50.728Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+worker-1   | 2026-11-04T15:09:50.728Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+worker-1   | 2026-11-04T15:09:50.729Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+api-1     | 2026-11-04T15:09:14.931Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@236a4d30
+api-1      | 2026-11-04T15:09:14.936Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-1      | 2026-11-04T15:09:15.035Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-1      | 2026-11-04T15:09:15.226Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.111s)
+api-1      | 2026-11-04T15:09:15.301Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+api-1      | 2026-11-04T15:09:15.304Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-1      | 2026-11-04T15:09:19.306Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-1      | 2026-11-04T15:09:21.188Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-1      | 2026-11-04T15:09:22.384Z  INFO [b9a408158131] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 17.775 seconds (process running for 19.346)
+api-1      | 2026-11-04T15:09:23.533Z  INFO [b9a408158131] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-1      | 2026-11-04T15:09:23.533Z  INFO [b9a408158131] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-1      | 2026-11-04T15:09:23.538Z  INFO [b9a408158131] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+api-1      | 2026-11-04T15:10:36.662Z  INFO [b9a408158131] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-1      | 2026-11-04T15:14:06.941Z  INFO [b9a408158131] 1 --- [marcador-api] [t-handler-16456] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+api-1      | 2026-11-04T15:14:07.001Z  INFO [b9a408158131] 1 --- [marcador-api] [t-handler-16456] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70e5737f:0/SimpleConnection@7b1a196e [delegate=amqp://marcador@172.18.0.3:5672/, localPort=40608]
+api-1      | 2026-11-04T15:14:07.179Z  INFO [b9a408158131] 1 --- [marcador-api] [t-handler-16456] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805246936]
+api-1      | 2026-11-04T15:14:07.845Z  INFO [b9a408158131] 1 --- [marcador-api] [enerContainer-2] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-1      | 2026-11-04T15:17:29.974Z  INFO [b9a408158131] 1 --- [marcador-api] [enerContainer-3] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-1      | 2026-11-04T15:21:01.236Z  INFO [b9a408158131] 1 --- [marcador-api] [enerContainer-4] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-3     |  :: Spring Boot ::                (v3.5.6)
+api-3      | 
+api-3      | 2026-11-04T15:10:14.170Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-3      | 2026-11-04T15:10:14.172Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-3      | 2026-11-04T15:10:17.479Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+api-3      | 2026-11-04T15:10:17.482Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-3      | 2026-11-04T15:10:17.577Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+api-3      | 2026-11-04T15:10:19.382Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-3      | 2026-11-04T15:10:19.396Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-3      | 2026-11-04T15:10:19.450Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-3      | 2026-11-04T15:10:19.666Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-3      | 2026-11-04T15:10:19.674Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5375 ms
+api-3      | 2026-11-04T15:10:21.349Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-3      | 2026-11-04T15:10:21.902Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@236a4d30
+api-3      | 2026-11-04T15:10:21.912Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-3      | 2026-11-04T15:10:22.000Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-3      | 2026-11-04T15:10:22.265Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.179s)
+api-3      | 2026-11-04T15:10:22.365Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+api-3      | 2026-11-04T15:10:22.371Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-3      | 2026-11-04T15:10:25.683Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-3      | 2026-11-04T15:10:27.284Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-3      | 2026-11-04T15:10:28.385Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 15.692 seconds (process running for 17.033)
+api-3      | 2026-11-04T15:10:31.867Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-3      | 2026-11-04T15:10:31.867Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-3      | 2026-11-04T15:10:31.869Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-3      | 2026-11-04T15:10:36.662Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-3      | 2026-11-04T15:14:07.843Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [enerContainer-2] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-3      | 2026-11-04T15:17:29.974Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [enerContainer-3] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-3      | 2026-11-04T15:21:00.759Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [t-handler-88495] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+api-3      | 2026-11-04T15:21:00.979Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [t-handler-88495] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70e5737f:0/SimpleConnection@2983ee9f [delegate=amqp://marcador@172.18.0.3:5672/, localPort=42072]
+api-3      | 2026-11-04T15:21:01.165Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [t-handler-88495] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805660687]
+api-3      | 2026-11-04T15:21:01.248Z  INFO [b8c5a6b71fba] 1 --- [marcador-api] [enerContainer-4] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+worker-1   | 2026-11-04T15:09:51.018Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+worker-1   | 2026-11-04T15:09:51.723Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f1711d
+worker-1   | 2026-11-04T15:09:51.727Z  INFO [0d8a58472262] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+worker-1   | 2026-11-04T15:14:07.232Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805246936]
+worker-1   | 2026-11-04T15:14:07.725Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 481 ms
+worker-1   | 2026-11-04T15:21:01.167Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805660687]
+worker-1   | 2026-11-04T15:21:01.231Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 60 ms
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=3.228 urt=3.228
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.872 urt=1.873
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/21/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.982 urt=2.983
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.150 urt=2.150
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.214 urt=2.213
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.320 urt=1.321
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.900 urt=0.900
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.984 urt=0.984
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/22/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.042 urt=2.042
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/16/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.000 urt=1.000
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.003 urt=1.003
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.445 urt=1.445
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/20/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.846 urt=1.846
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.079 urt=1.079
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.581 urt=1.581
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.069 urt=2.070
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.249 urt=1.248
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/19/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.002 urt=1.001
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/17/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.948 urt=0.948
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.417 urt=1.416
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.122 urt=1.122
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/23/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.629 urt=1.629
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/12/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.895 urt=1.894
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.008 urt=3.008
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.882 urt=0.882
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/17/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.663 urt=1.663
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.094 urt=2.094
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.817 urt=0.817
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.405 urt=1.404
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.882 urt=0.882
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/9/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.405 urt=1.404
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/20/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.913 urt=0.913
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/15/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.248 urt=1.247
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/16/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.889 urt=0.889
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.890 urt=0.890
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.365 urt=2.365
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.796 urt=1.796
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.055 urt=1.055
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.030 urt=2.030
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.947 urt=0.946
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.778 urt=1.778
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.087 urt=2.087
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/13/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.621 urt=1.620
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.695 urt=1.695
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/12/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.072 urt=1.072
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.933 urt=0.932
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.389 urt=1.389
+api-2      | 
+api-2      |   .   ____          _            __ _ _
+api-2      |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-2      | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-2      |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.916 urt=0.916
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.948 urt=2.949
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.354 urt=1.355
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.832 urt=0.832
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.832 urt=2.832
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.155 urt=1.154
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/14/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.571 urt=1.571
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.376 urt=3.375
+worker-2  | 2026-11-04T15:09:46.570Z  INFO [a180392b7acc] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Started WorkerApplication in 19.913 seconds (process running for 22.328)
+worker-2   | 2026-11-04T15:09:50.356Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+worker-2   | 2026-11-04T15:09:50.357Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+worker-2   | 2026-11-04T15:09:50.358Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+worker-2   | 2026-11-04T15:09:50.571Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+worker-2   | 2026-11-04T15:09:51.268Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f1711d
+worker-2   | 2026-11-04T15:09:51.355Z  INFO [a180392b7acc] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+worker-2   | 2026-11-04T15:10:35.872Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805035539]
+worker-2   | 2026-11-04T15:10:36.378Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 418 ms
+worker-2   | 2026-11-04T15:17:29.865Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805449862]
+worker-2   | 2026-11-04T15:17:29.971Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 103 ms
+api-2      |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-2      |  =========|_|==============|___/=/_/_/_/
+api-2      | 
+api-2      |  :: Spring Boot ::                (v3.5.6)
+api-2      | 
+api-2      | 2026-11-04T15:10:14.353Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-2      | 2026-11-04T15:10:14.357Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-2      | 2026-11-04T15:10:17.627Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.207 urt=2.207
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.933 urt=0.933
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.777 urt=1.777
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/22/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.836 urt=1.835
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.243 urt=1.243
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.824 urt=0.824
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.176 urt=2.177
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.152 urt=2.153
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.741 urt=1.742
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.962 urt=0.962
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.139 urt=2.139
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.757 urt=2.756
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.762 urt=1.761
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/17/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.888 urt=0.887
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.638 urt=1.638
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/11/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.886 urt=0.886
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.674 urt=2.675
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.345 urt=1.345
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/22/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.953 urt=2.953
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.598 urt=2.597
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.907 urt=0.907
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.522 urt=1.522
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/13/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.563 urt=1.562
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.615 urt=1.614
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.119 urt=2.119
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.173 urt=1.173
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/12/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.927 urt=2.928
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.096 urt=2.095
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.992 urt=1.992
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.199 urt=1.198
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/20/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.894 urt=1.895
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.910 urt=1.911
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/11/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.727 urt=1.726
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.303 urt=2.304
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.411 urt=1.410
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.053 urt=1.053
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.768 urt=1.769
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.402 urt=1.403
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.574 urt=2.574
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.978 urt=0.977
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/13/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.186 urt=1.186
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.981 urt=2.982
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.922 urt=2.921
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.378 urt=1.378
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.003 urt=2.003
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.632 urt=1.633
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.038 urt=1.038
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.661 urt=2.661
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.002 urt=2.002
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.376 urt=2.375
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.971 urt=0.970
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.044 urt=1.044
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.880 urt=1.881
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.377 urt=1.378
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.097 urt=1.098
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=3.729 urt=3.729
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.122 urt=1.121
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.845 urt=1.845
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.881 urt=1.881
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.174 urt=1.174
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.351 urt=1.351
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/10/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.083 urt=1.083
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.356 urt=1.355
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/20/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=4.560 urt=4.560
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.927 urt=0.927
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.938 urt=0.938
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.332 urt=1.331
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.391 urt=1.390
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/21/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.323 urt=2.324
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.924 urt=0.924
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.459 urt=1.458
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/18/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.982 urt=0.982
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.705 urt=1.705
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/11/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.753 urt=1.753
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/9/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.314 urt=2.314
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.666 urt=1.666
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/12/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.600 urt=1.600
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.335 urt=1.335
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.563 urt=1.563
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/14/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=2.053 urt=2.053
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.599 urt=1.599
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.674 urt=1.674
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/19/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.360 urt=2.361
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/24/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.038 urt=2.037
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.288 urt=2.288
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=3.651 urt=3.650
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/23/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.007 urt=3.007
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.168 urt=1.168
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.323 urt=1.323
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.530 urt=1.530
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.168 urt=1.168
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.139 urt=1.140
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/9/prediction HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=0.966 urt=0.966
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.963 urt=1.963
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=4.450 urt=4.450
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.203 urt=1.203
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.759 urt=1.758
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.169 urt=1.169
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.312 urt=2.312
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/13/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.911 urt=0.910
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.608 urt=2.608
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.072 urt=1.072
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.031 urt=1.031
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.196 urt=3.196
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.502 urt=1.503
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.726 urt=2.726
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/22/prediction HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.539 urt=1.538
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.592 urt=1.592
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.010 urt=2.009
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.860 urt=2.859
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.914 urt=0.914
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.196 urt=3.195
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.339 urt=2.340
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=1.400 urt=1.401
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/14/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.753 urt=1.753
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.194 urt=1.194
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.987 urt=0.986
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.165 urt=2.164
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.491 urt=2.492
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/14/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.949 urt=1.950
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.669 urt=2.669
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.6:8080 rt=2.144 urt=2.144
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.688 urt=1.688
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.171 urt=1.171
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.7:8080 rt=1.362 urt=1.362
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.796 urt=1.796
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.901 urt=0.902
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.893 urt=1.893
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.319 urt=2.320
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/13/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.822 urt=1.821
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.093 urt=1.093
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.993 urt=0.993
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.998 urt=0.998
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.174 urt=3.174
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/23/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.992 urt=0.992
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/matches HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.471 urt=2.471
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=3.170 urt=3.169
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.054 urt=2.054
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/9/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=8.212 urt=8.212
+api-2      | 2026-11-04T15:10:17.630Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-2      | 2026-11-04T15:10:17.669Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+api-2      | 2026-11-04T15:10:19.458Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-2      | 2026-11-04T15:10:19.527Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-2      | 2026-11-04T15:10:19.528Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-2      | 2026-11-04T15:10:19.738Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-2      | 2026-11-04T15:10:19.739Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5210 ms
+api-2      | 2026-11-04T15:10:21.224Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-2      | 2026-11-04T15:10:21.739Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@236a4d30
+api-2      | 2026-11-04T15:10:21.741Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-2      | 2026-11-04T15:10:21.858Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-2      | 2026-11-04T15:10:22.124Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.168s)
+api-2      | 2026-11-04T15:10:22.152Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+api-2      | 2026-11-04T15:10:22.174Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-2      | 2026-11-04T15:10:25.231Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-2      | 2026-11-04T15:10:26.732Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-2      | 2026-11-04T15:10:27.228Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-2      | 2026-11-04T15:10:27.229Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-2      | 2026-11-04T15:10:27.231Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-2      | 2026-11-04T15:10:28.140Z  INFO [bdc5457184c8] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 15.206 seconds (process running for 16.577)
+api-2      | 2026-11-04T15:10:35.547Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+api-2      | 2026-11-04T15:10:35.654Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70e5737f:0/SimpleConnection@c2ad0f [delegate=amqp://marcador@172.18.0.3:5672/, localPort=53772]
+api-2      | 2026-11-04T15:10:35.740Z  INFO [bdc5457184c8] 1 --- [marcador-api] [omcat-handler-2] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805035539]
+api-2      | 2026-11-04T15:10:36.661Z  INFO [bdc5457184c8] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-2      | 2026-11-04T15:14:07.847Z  INFO [bdc5457184c8] 1 --- [marcador-api] [enerContainer-2] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-2      | 2026-11-04T15:17:29.863Z  INFO [bdc5457184c8] 1 --- [marcador-api] [t-handler-71409] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805449862]
+api-2      | 2026-11-04T15:17:29.977Z  INFO [bdc5457184c8] 1 --- [marcador-api] [enerContainer-3] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-2      | 2026-11-04T15:21:01.236Z  INFO [bdc5457184c8] 1 --- [marcador-api] [enerContainer-4] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/10/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=0.942 urt=0.941
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.210 urt=1.210
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/rooms/1/ranking HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=1.986 urt=1.987
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "PUT /api/matches/20/prediction HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=4.165 urt=4.165
+gateway-1  | 172.18.0.11 [04/Nov/2026:15:24:05 +0000] "GET /api/stats/me HTTP/1.1" 200 upstream=172.18.0.5:8080 rt=2.745 urt=2.745
+redis-1    | 1:C 04 Nov 2026 15:07:56.266 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+redis-1    | 1:C 04 Nov 2026 15:07:56.266 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1    | 1:C 04 Nov 2026 15:07:56.266 * Redis version=7.4.12, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1    | 1:C 04 Nov 2026 15:07:56.266 * Configuration loaded
+redis-1    | 1:M 04 Nov 2026 15:07:56.266 * monotonic clock: POSIX clock_gettime
+redis-1    | 1:M 04 Nov 2026 15:07:56.267 * Running mode=standalone, port=6379.
+redis-1    | 1:M 04 Nov 2026 15:07:56.267 * Server initialized
+redis-1    | 1:M 04 Nov 2026 15:07:56.267 * Ready to accept connections tcp
+redis-1    | 1:M 04 Nov 2026 15:20:34.565 * 100 changes in 300 seconds. Saving...
+redis-1    | 1:M 04 Nov 2026 15:20:34.565 * Background saving started by pid 914
+redis-1    | 914:C 04 Nov 2026 15:20:34.568 * DB saved on disk
+redis-1    | 914:C 04 Nov 2026 15:20:34.568 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+redis-1    | 1:M 04 Nov 2026 15:20:34.666 * Background saving terminated with success
+postgres-1  | The files belonging to this database system will be owned by user "postgres".
+postgres-1  | This user must also own the server process.
+postgres-1  | 
+postgres-1  | The database cluster will be initialized with locale "en_US.utf8".
+postgres-1  | The default database encoding has accordingly been set to "UTF8".
+postgres-1  | The default text search configuration will be set to "english".
+postgres-1  | 
+postgres-1  | Data page checksums are disabled.
+postgres-1  | 
+postgres-1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1  | creating subdirectories ... ok
+postgres-1  | selecting dynamic shared memory implementation ... posix
+postgres-1  | selecting default max_connections ... 100
+postgres-1  | selecting default shared_buffers ... 128MB
+postgres-1  | selecting default time zone ... UTC
+postgres-1  | creating configuration files ... ok
+postgres-1  | running bootstrap script ... ok
+postgres-1  | sh: locale: not found
+postgres-1  | 2026-11-04 15:07:56.876 UTC [34] WARNING:  no usable system locales were found
+postgres-1  | performing post-bootstrap initialization ... ok
+postgres-1  | syncing data to disk ... ok
+postgres-1  | 
+postgres-1  | 
+postgres-1  | Success. You can now start the database server using:
+postgres-1  | 
+postgres-1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1  | 
+postgres-1  | initdb: warning: enabling "trust" authentication for local connections
+postgres-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1  | waiting for server to start....2026-11-04 15:07:57.640 UTC [40] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-11-04 15:07:57.640 UTC [40] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-11-04 15:07:57.643 UTC [43] LOG:  database system was shut down at 2026-11-04 15:07:57 UTC
+postgres-1  | 2026-11-04 15:07:57.647 UTC [40] LOG:  database system is ready to accept connections
+postgres-1  |  done
+postgres-1  | server started
+postgres-1  | CREATE DATABASE
+postgres-1  | 
+postgres-1  | 
+postgres-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-1  | 
+postgres-1  | waiting for server to shut down....2026-11-04 15:07:57.805 UTC [40] LOG:  received fast shutdown request
+postgres-1  | 2026-11-04 15:07:57.806 UTC [40] LOG:  aborting any active transactions
+postgres-1  | 2026-11-04 15:07:57.811 UTC [40] LOG:  background worker "logical replication launcher" (PID 46) exited with exit code 1
+postgres-1  | 2026-11-04 15:07:57.811 UTC [41] LOG:  shutting down
+postgres-1  | 2026-11-04 15:07:57.812 UTC [41] LOG:  checkpoint starting: shutdown immediate
+postgres-1  | 2026-11-04 15:07:57.834 UTC [41] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.002 s, total=0.024 s; sync files=301, longest=0.001 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925DA0, redo lsn=0/1925DA0
+postgres-1  | 2026-11-04 15:07:57.844 UTC [40] LOG:  database system is shut down
+postgres-1  |  done
+postgres-1  | server stopped
+postgres-1  | 
+postgres-1  | PostgreSQL init process complete; ready for start up.
+postgres-1  | 
+postgres-1  | 2026-11-04 15:07:57.934 UTC [1] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-11-04 15:07:57.934 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-11-04 15:07:57.934 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-11-04 15:07:57.935 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-11-04 15:07:57.939 UTC [56] LOG:  database system was shut down at 2026-11-04 15:07:57 UTC
+postgres-1  | 2026-11-04 15:07:57.945 UTC [1] LOG:  database system is ready to accept connections
+postgres-1  | 2026-11-04 15:12:58.039 UTC [54] LOG:  checkpoint starting: time
+postgres-1  | 2026-11-04 15:13:19.084 UTC [54] LOG:  checkpoint complete: wrote 216 buffers (1.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=21.043 s, sync=0.002 s, total=21.046 s; sync files=95, longest=0.001 s, average=0.001 s; distance=2272 kB, estimate=2272 kB; lsn=0/1BDF2D8, redo lsn=0/1B5DFE0
+postgres-1  | 2026-11-04 15:17:58.182 UTC [54] LOG:  checkpoint starting: time
+postgres-1  | 2026-11-04 15:18:04.696 UTC [54] LOG:  checkpoint complete: wrote 86 buffers (0.5%); 0 WAL file(s) added, 0 removed, 1 recycled; write=6.512 s, sync=0.002 s, total=6.515 s; sync files=25, longest=0.001 s, average=0.001 s; distance=8637 kB, estimate=8637 kB; lsn=0/23E0838, redo lsn=0/23CD408
+postgres-1  | 2026-11-04 15:22:58.796 UTC [54] LOG:  checkpoint starting: time
+postgres-1  | 2026-11-04 15:23:03.740 UTC [54] LOG:  checkpoint complete: wrote 62 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.938 s, sync=0.003 s, total=4.944 s; sync files=20, longest=0.002 s, average=0.001 s; distance=5042 kB, estimate=8277 kB; lsn=0/2910940, redo lsn=0/28B9C48
+rabbitmq-1  |   TLS Library: OpenSSL - OpenSSL 3.1.8 11 Feb 2025
+rabbitmq-1  |   Release series support status: see https://www.rabbitmq.com/release-information
+rabbitmq-1  | 
+rabbitmq-1  |   Doc guides:  https://www.rabbitmq.com/docs
+rabbitmq-1  |   Support:     https://www.rabbitmq.com/docs/contact
+rabbitmq-1  |   Tutorials:   https://www.rabbitmq.com/tutorials
+rabbitmq-1  |   Monitoring:  https://www.rabbitmq.com/docs/monitoring
+rabbitmq-1  |   Upgrading:   https://www.rabbitmq.com/docs/upgrade
+rabbitmq-1  | 
+rabbitmq-1  |   Logs: <stdout>
+rabbitmq-1  | 
+rabbitmq-1  |   Config file(s): /etc/rabbitmq/conf.d/10-defaults.conf
+rabbitmq-1  | 
+rabbitmq-1  |   Starting broker...2026-11-04 15:07:59.583460+00:00 [info] <0.254.0> [0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  node           : rabbit@1f1b56be452f[0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  home dir       : /var/lib/rabbitmq[0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  config file(s) : /etc/rabbitmq/conf.d/10-defaults.conf[0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  cookie hash    : 7XnBqaCoIl0d7pMQeB+7jA==[0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  log(s)         : <stdout>[0m
+rabbitmq-1  | 2026-11-04 15:07:59.583460+00:00 [info] <0.254.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@1f1b56be452f[0m
+rabbitmq-1  | 2026-11-04 15:07:59.861315+00:00 [info] <0.254.0> Running boot step pre_boot defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.861389+00:00 [info] <0.254.0> Running boot step rabbit_global_counters defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.861652+00:00 [info] <0.254.0> Running boot step rabbit_osiris_metrics defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.861810+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.862270+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.870014+00:00 [info] <0.329.0> Memory high watermark set to 6393 MiB (6703774105 bytes) of 15983 MiB (16759435264 bytes) total[0m
+rabbitmq-1  | 2026-11-04 15:07:59.872283+00:00 [info] <0.331.0> Enabling free disk space monitoring (disk free space: 91410710528, total memory: 16759435264)[0m
+rabbitmq-1  | 2026-11-04 15:07:59.872321+00:00 [info] <0.331.0> Disk free limit set to 50MB[0m
+rabbitmq-1  | 2026-11-04 15:07:59.873580+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.873636+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879067+00:00 [info] <0.334.0> Limiting to approx 65439 file handles (58893 sockets)[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879183+00:00 [info] <0.335.0> FHC read buffering: OFF[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879212+00:00 [info] <0.335.0> FHC write buffering: ON[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879528+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879575+00:00 [info] <0.315.0> Will use 4 processes for default worker pool[0m
+rabbitmq-1  | 2026-11-04 15:07:59.879607+00:00 [info] <0.315.0> Starting worker pool 'worker_pool' with 4 processes in it[0m
+rabbitmq-1  | 2026-11-04 15:07:59.880047+00:00 [info] <0.254.0> Running boot step database defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:07:59.880308+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:07:59.881329+00:00 [notice] <0.316.0> Feature flags: attempt to enable `detailed_queues_endpoint`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:07:59.951966+00:00 [notice] <0.316.0> Feature flags: `detailed_queues_endpoint` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:07:59.952103+00:00 [notice] <0.316.0> Feature flags: attempt to enable `quorum_queue_non_voters`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.021002+00:00 [notice] <0.316.0> Feature flags: `quorum_queue_non_voters` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.021232+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_update_config_command`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.090845+00:00 [notice] <0.316.0> Feature flags: `stream_update_config_command` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.090970+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_filtering`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.160210+00:00 [notice] <0.316.0> Feature flags: `stream_filtering` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.160299+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_sac_coordinator_unblock_group`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.229923+00:00 [notice] <0.316.0> Feature flags: `stream_sac_coordinator_unblock_group` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.230020+00:00 [notice] <0.316.0> Feature flags: attempt to enable `restart_streams`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.297545+00:00 [notice] <0.316.0> Feature flags: `restart_streams` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.297645+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.367529+00:00 [notice] <0.316.0> Feature flags: `message_containers` enabled[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.367639+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers_deaths_v2`...[0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.437647+00:00 [notice] <0.316.0> Feature flags: `message_containers_deaths_v2` enabled[0m
+rabbitmq-1  | 2026-11-04 15:08:00.437987+00:00 [info] <0.254.0> DB: virgin node -> run peer discovery[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.438040+00:00 [warning] <0.254.0> Classic peer discovery backend: list of nodes does not contain the local node [][0m
+rabbitmq-1  | [38;5;87m2026-11-04 15:08:00.445423+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped[0m
+rabbitmq-1  | 2026-11-04 15:08:00.523844+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1  | 2026-11-04 15:08:00.523953+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1  | 2026-11-04 15:08:00.524066+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1  | 2026-11-04 15:08:00.524213+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528041+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528123+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528275+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528365+00:00 [info] <0.558.0> Setting up a table for connection tracking on this node: tracked_connection[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528433+00:00 [info] <0.558.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528512+00:00 [info] <0.558.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528580+00:00 [info] <0.558.0> Setting up a table for channel tracking on this node: tracked_channel[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528646+00:00 [info] <0.558.0> Setting up a table for channel tracking on this node: tracked_channel_per_user[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528718+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528838+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528952+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.528993+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529018+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529127+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529216+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529294+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529348+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529397+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529460+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529525+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529604+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529664+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529722+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529801+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529855+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529884+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+rabbitmq-1  | 2026-11-04 15:08:00.529953+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.530022+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.530081+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.530140+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.530187+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.530396+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.531113+00:00 [info] <0.566.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+rabbitmq-1  | 2026-11-04 15:08:00.531187+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.531923+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.532159+00:00 [info] <0.570.0> Starting rabbit_node_monitor (in ignore mode)[0m
+rabbitmq-1  | 2026-11-04 15:08:00.532278+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.532825+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533008+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533084+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533119+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533193+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533243+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.533293+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.555125+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.555561+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.555879+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.555938+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556000+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556065+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556159+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556259+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556325+00:00 [info] <0.254.0> Running boot step rabbit_federation_parameters defined by app rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:00.556505+00:00 [info] <0.254.0> Running boot step rabbit_federation_supervisor defined by app rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562344+00:00 [info] <0.254.0> Running boot step rabbit_federation_queue defined by app rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562487+00:00 [info] <0.254.0> Running boot step rabbit_federation_upstream_exchange defined by app rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562571+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562650+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562710+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.562964+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.574363+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.574425+00:00 [info] <0.254.0> Will seed default virtual host and user...[0m
+rabbitmq-1  | 2026-11-04 15:08:00.574538+00:00 [info] <0.254.0> Adding vhost '/' (description: 'Default virtual host', tags: [])[0m
+rabbitmq-1  | 2026-11-04 15:08:00.579337+00:00 [info] <0.630.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@1f1b56be452f/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+rabbitmq-1  | 2026-11-04 15:08:00.580145+00:00 [info] <0.630.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.588195+00:00 [info] <0.630.0> Starting message stores for vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.588375+00:00 [info] <0.639.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq-1  | 2026-11-04 15:08:00.589332+00:00 [info] <0.630.0> Started message store of type transient for vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.589475+00:00 [info] <0.643.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.589921+00:00 [warning] <0.643.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+rabbitmq-1  | 2026-11-04 15:08:00.590541+00:00 [info] <0.630.0> Started message store of type persistent for vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.590638+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_classic_queue took 10ms[0m
+rabbitmq-1  | 2026-11-04 15:08:00.590685+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+rabbitmq-1  | 2026-11-04 15:08:00.590776+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+rabbitmq-1  | 2026-11-04 15:08:00.592546+00:00 [info] <0.254.0> Created user 'marcador'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.593061+00:00 [info] <0.254.0> Successfully set user tags for user 'marcador' to [administrator][0m
+rabbitmq-1  | 2026-11-04 15:08:00.593569+00:00 [info] <0.254.0> Successfully set permissions for user 'marcador' in virtual host '/' to '.*', '.*', '.*'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.593614+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.593683+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.593715+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.593873+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594008+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594041+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594112+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594176+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594228+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594407+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594467+00:00 [info] <0.315.0> Starting worker pool 'definition_import_pool' with 4 processes in it[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594829+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.594908+00:00 [info] <0.254.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-qYFvKqydJpLWeWhMm8Cn8Q'[0m
+rabbitmq-1  | 2026-11-04 15:08:00.595528+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.595702+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit[0m
+rabbitmq-1  | 2026-11-04 15:08:00.595799+00:00 [info] <0.254.0> Running boot step rabbit_federation_exchange defined by app rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:00.596031+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+rabbitmq-1  | 2026-11-04 15:08:00.596140+00:00 [info] <0.680.0> Resetting node maintenance status[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0> By default, this feature can still be used for now.[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1  | [38;5;214m2026-11-04 15:08:00.740164+00:00 [warning] <0.709.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+rabbitmq-1  | 2026-11-04 15:08:04.518848+00:00 [info] <0.746.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+rabbitmq-1  | 2026-11-04 15:08:04.519419+00:00 [info] <0.778.0> Statistics database started.[0m
+rabbitmq-1  | 2026-11-04 15:08:04.519503+00:00 [info] <0.777.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+rabbitmq-1  | 2026-11-04 15:08:04.537108+00:00 [info] <0.796.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+rabbitmq-1  | 2026-11-04 15:08:04.537238+00:00 [info] <0.680.0> Ready to start client connection listeners[0m
+rabbitmq-1  | 2026-11-04 15:08:04.538969+00:00 [info] <0.840.0> started TCP listener on [::]:5672[0m
+rabbitmq-1  |  completed with 5 plugins.
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0> Server startup complete; 5 plugins started.[0m
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0>  * rabbitmq_prometheus[0m
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0>  * rabbitmq_federation[0m
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0>  * rabbitmq_management[0m
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0>  * rabbitmq_management_agent[0m
+rabbitmq-1  | 2026-11-04 15:08:04.761316+00:00 [info] <0.680.0>  * rabbitmq_web_dispatch[0m
+rabbitmq-1  | 2026-11-04 15:08:04.843788+00:00 [info] <0.9.0> Time to start RabbitMQ: 8241 ms[0m
+rabbitmq-1  | 2026-11-04 15:08:45.834785+00:00 [info] <0.854.0> accepting AMQP connection <0.854.0> (172.18.0.8:45042 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:08:46.020608+00:00 [info] <0.854.0> connection <0.854.0> (172.18.0.8:45042 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#53df7e67:0[0m
+rabbitmq-1  | 2026-11-04 15:08:46.023370+00:00 [info] <0.854.0> connection <0.854.0> (172.18.0.8:45042 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:08:46.295551+00:00 [info] <0.868.0> accepting AMQP connection <0.868.0> (172.18.0.10:43852 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:08:46.394488+00:00 [info] <0.868.0> connection <0.868.0> (172.18.0.10:43852 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#53df7e67:0[0m
+rabbitmq-1  | 2026-11-04 15:08:46.398097+00:00 [info] <0.868.0> connection <0.868.0> (172.18.0.10:43852 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:09:01.436788+00:00 [info] <0.854.0> closing AMQP connection <0.854.0> (172.18.0.8:45042 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0, vhost: '/', user: 'marcador')[0m
+rabbitmq-1  | 2026-11-04 15:09:01.788897+00:00 [info] <0.868.0> closing AMQP connection <0.868.0> (172.18.0.10:43852 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0, vhost: '/', user: 'marcador')[0m
+rabbitmq-1  | 2026-11-04 15:09:46.134462+00:00 [info] <0.946.0> accepting AMQP connection <0.946.0> (172.18.0.10:34204 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:09:46.166606+00:00 [info] <0.949.0> accepting AMQP connection <0.949.0> (172.18.0.9:56550 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:09:46.232946+00:00 [info] <0.946.0> connection <0.946.0> (172.18.0.10:34204 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#53df7e67:0[0m
+rabbitmq-1  | 2026-11-04 15:09:46.235633+00:00 [info] <0.946.0> connection <0.946.0> (172.18.0.10:34204 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:09:46.263025+00:00 [info] <0.949.0> connection <0.949.0> (172.18.0.9:56550 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#53df7e67:0[0m
+rabbitmq-1  | 2026-11-04 15:09:46.266021+00:00 [info] <0.949.0> connection <0.949.0> (172.18.0.9:56550 -> 172.18.0.3:5672 - rabbitConnectionFactory#53df7e67:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:10:35.559347+00:00 [info] <0.1001.0> accepting AMQP connection <0.1001.0> (172.18.0.6:53772 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:10:35.647329+00:00 [info] <0.1001.0> connection <0.1001.0> (172.18.0.6:53772 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#70e5737f:0[0m
+rabbitmq-1  | 2026-11-04 15:10:35.650654+00:00 [info] <0.1001.0> connection <0.1001.0> (172.18.0.6:53772 -> 172.18.0.3:5672 - rabbitConnectionFactory#70e5737f:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:14:06.954173+00:00 [info] <0.1070.0> accepting AMQP connection <0.1070.0> (172.18.0.7:40608 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:14:06.995154+00:00 [info] <0.1070.0> connection <0.1070.0> (172.18.0.7:40608 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#70e5737f:0[0m
+rabbitmq-1  | 2026-11-04 15:14:06.997895+00:00 [info] <0.1070.0> connection <0.1070.0> (172.18.0.7:40608 -> 172.18.0.3:5672 - rabbitConnectionFactory#70e5737f:0): user 'marcador' authenticated and granted access to vhost '/'[0m
+rabbitmq-1  | 2026-11-04 15:21:00.852589+00:00 [info] <0.1179.0> accepting AMQP connection <0.1179.0> (172.18.0.5:42072 -> 172.18.0.3:5672)[0m
+rabbitmq-1  | 2026-11-04 15:21:00.968507+00:00 [info] <0.1179.0> connection <0.1179.0> (172.18.0.5:42072 -> 172.18.0.3:5672) has a client-provided name: rabbitConnectionFactory#70e5737f:0[0m
+rabbitmq-1  | 2026-11-04 15:21:00.972813+00:00 [info] <0.1179.0> connection <0.1179.0> (172.18.0.5:42072 -> 172.18.0.3:5672 - rabbitConnectionFactory#70e5737f:0): user 'marcador' authenticated and granted access to vhost '/'[0m

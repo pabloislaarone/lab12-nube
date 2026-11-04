@@ -1,0 +1,8 @@
+worker-2  | 2026-11-04T15:10:35.872Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805035539]
+worker-2  | 2026-11-04T15:10:36.378Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 418 ms
+worker-2  | 2026-11-04T15:17:29.865Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805449862]
+worker-2  | 2026-11-04T15:17:29.971Z  INFO [a180392b7acc] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 103 ms
+worker-1  | 2026-11-04T15:14:07.232Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805246936]
+worker-1  | 2026-11-04T15:14:07.725Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 481 ms
+worker-1  | 2026-11-04T15:21:01.167Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793805660687]
+worker-1  | 2026-11-04T15:21:01.231Z  INFO [0d8a58472262] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 40 usuarios, 8 partidos en 60 ms
