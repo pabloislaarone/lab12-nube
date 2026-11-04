@@ -17,7 +17,7 @@ lab12-nube/
 │   └── grafana/              # Tablero de escalamiento
 ├── k6/stress.js              # Prueba de estrés
 ├── scripts/                  # Comparación 1 vs 3 réplicas y evidencia de balanceo (.sh / .ps1)
-├── docs/                     # Arquitectura, reglas, pruebas y resultados
+├── docs/                     # Arquitectura, reglas, pruebas, resultados y evidencias (capturas)
 ├── docker-compose.yml
 └── .env.example
 ```
