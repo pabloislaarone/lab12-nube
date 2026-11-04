@@ -1,0 +1,40 @@
+name: Evidencias
+on:
+  push:
+    branches: [evidencias]
+permissions:
+  contents: write
+jobs:
+  evidencias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main, path: app }
+      - uses: actions/checkout@v4
+        with: { path: ev }
+      - name: Levantar sistema
+        working-directory: app
+        run: docker compose up -d --build --wait
+      - name: Datos demo y evidencias de texto
+        working-directory: app
+        run: |
+          mkdir -p ../out
+          TOKEN=$(curl -s -X POST localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{"email":"admin@marcador.pe","password":"admin123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
+          curl -s -X POST localhost:8080/api/admin/demo -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"users":20}' > ../out/demo.json
+          sleep 6
+          curl -s -X POST localhost:8080/api/admin/recompute -H "Authorization: Bearer $TOKEN" > /dev/null; sleep 4
+          { echo '$ docker compose ps'; docker compose ps --format 'table {{.Name}}\t{{.Image}}\t{{.Status}}'; } > ../out/compose-ps.txt
+          { echo '$ ./scripts/balanceo.sh 30'; ./scripts/balanceo.sh 30; echo; echo '$ curl -I http://localhost:8080/api/info  (3 veces)'; for i in 1 2 3; do curl -s -D - -o /dev/null localhost:8080/api/info | grep -iE 'x-instance-id|x-upstream'; done; } > ../out/balanceo.txt
+          { echo '$ docker compose up -d --scale api=5 --wait'; docker compose up -d --scale api=5 --no-recreate --wait api 2>&1 | tail -3; sleep 8; echo; echo '$ ./scripts/balanceo.sh 50'; ./scripts/balanceo.sh 50; docker compose up -d --scale api=3 --wait api >/dev/null 2>&1; } > ../out/escalar5.txt
+          { echo '$ docker compose logs worker | grep recalculados'; docker compose logs worker --no-color | grep -E "recalculados" | sed -E 's/^(worker-[0-9]).*Puntajes/\1 | Puntajes/'; } > ../out/worker.txt
+          { echo '$ docker stats --no-stream'; docker stats --no-stream --format 'table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}'; } > ../out/stats.txt
+          cat ../out/*.txt
+      - name: Capturas
+        run: |
+          cd ev && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+          node shots.mjs ../out
+      - name: Publicar
+        if: always()
+        run: |
+          cd out && git init -q && git checkout -q -b r && git add . && git -c user.name=ci -c user.email=ci@local commit -qm evidencias
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:refs/heads/evidencias-out
