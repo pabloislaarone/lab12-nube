@@ -67,6 +67,11 @@ app:
     combine-mode: ${SCORING_COMBINE_MODE:HIGHEST}
     early-bonus-requires-hit: ${SCORING_EARLY_REQUIRES_HIT:true}
 
+  ai:
+    provider: ${AI_PROVIDER:anthropic}
+    api-key: ${AI_API_KEY:}
+    model: ${AI_MODEL:}
+
 logging:
   pattern:
     level: "%5p [${app.instance-id}]"

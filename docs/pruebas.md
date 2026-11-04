@@ -14,11 +14,15 @@ Todas las pruebas corren automáticamente en GitHub Actions (`.github/workflows/
 | Regla 5 (anticipación) | 7 | Más de 24 h = +1, exactamente 24 h no cuenta, último minuto solo base, último minuto no avanza la racha, todas las reglas juntas |
 | Idempotencia | 1 | Misma entrada → mismo resultado |
 
-## 2. Pruebas de integración (18 pruebas, todas pasan)
+## 1.1 Pruebas unitarias del análisis de estadísticas (6 pruebas)
+
+`InsightEngineTest`: cálculo de indicadores, análisis automático, caso sin resultados, lectura de la respuesta de la IA (incluso con texto alrededor) y descarte de respuestas inválidas.
+
+## 2. Pruebas de integración (19 pruebas, todas pasan)
 
 Usan **Testcontainers**, es decir, Postgres 16, Redis 7 y RabbitMQ 3.13 reales dentro de contenedores.
 
-**API, `ApiFlowTest` (15 pruebas):**
+**API, `ApiFlowTest` (16 pruebas):**
 - Registro, login, correo duplicado (409) y contraseña incorrecta (401).
 - Pronóstico en un partido futuro, edición sin duplicar y bloqueo de un partido ya iniciado (409).
 - Creación de una sala, vista previa con el código, unión con el código en minúsculas y ranking de la sala.
@@ -26,6 +30,7 @@ Usan **Testcontainers**, es decir, Postgres 16, Redis 7 y RabbitMQ 3.13 reales d
 - Solo el admin carga resultados (403 para un usuario). Al cargar uno, se publica el evento en RabbitMQ.
 - No se puede cargar el resultado de un partido futuro, y el ranking excluye al admin.
 - Cabecera `X-Instance-Id` en las respuestas.
+- El endpoint de estadísticas con IA responde con el análisis; el admin recibe 400.
 
 **Worker, `ScoringWorkerTest` (3 pruebas):**
 - Cálculo con las 5 reglas sobre datos reales: Ana = 16 puntos y Beto = 3 (detalle en [reglas-puntuacion.md](reglas-puntuacion.md)).

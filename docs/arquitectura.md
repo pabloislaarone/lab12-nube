@@ -86,6 +86,20 @@ Cuando el worker termina, publica un aviso en un canal de Redis. **Todas** las r
 | Editar nombre o descripción, regenerar código, expulsar miembros, eliminar la sala | Solo el dueño |
 | Abandonar la sala | Miembros (el dueño no, debe eliminarla) |
 
-## 7. Monitoreo (opcional)
+## 7. Estadísticas con IA (opcional)
+
+En **Estadísticas → Análisis de tu juego**, cada participante recibe un análisis personalizado de sus pronósticos.
+
+1. La API calcula los indicadores del participante:
+   - porcentaje de acierto;
+   - tendencia (local, empate o visitante) comparada con lo que realmente pasó;
+   - goles pronosticados contra goles reales;
+   - acierto en pronósticos anticipados contra los de última hora;
+   - rachas y partidos sin pronosticar.
+2. Si hay una clave configurada (`AI_API_KEY`, con `AI_PROVIDER=anthropic` o `gemini`), envía esos indicadores al modelo. El modelo devuelve 3 hallazgos y un consejo en JSON.
+3. La respuesta se guarda en **Redis**, con una clave que depende de los indicadores. Así no se vuelve a llamar a la IA hasta que haya resultados nuevos, aunque la petición llegue a otra réplica.
+4. Sin clave, o si la IA no responde, se usa un **análisis automático por reglas** con los mismos indicadores. La pantalla indica cuál de los dos generó el texto.
+
+## 8. Monitoreo (opcional)
 
 Con `docker compose --profile monitoring up -d` se levantan Prometheus y Grafana. Prometheus descubre las réplicas por DNS y el tablero **"Marcador 26 · Escalamiento"** muestra peticiones por segundo, latencia p95, CPU y memoria **por réplica**, y cuántos recálculos hizo cada worker.

@@ -64,6 +64,51 @@ function CumulativeChart({ points }) {
   );
 }
 
+/** Análisis personalizado: lo escribe la IA si hay clave configurada; si no, el análisis automático. */
+function AiInsights() {
+  const { data, loading, error, reload } = useFetch('/stats/me/insights');
+  useRankingUpdates(() => reload(true));
+
+  return (
+    <section className="card card-pad insights">
+      <div className="row" style={{ justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' }}>
+        <h3 style={{ fontSize: 16 }}>Análisis de tu juego</h3>
+        {data && (
+          <span className={`chip ${data.ai ? 'chip-accent' : ''}`} title={data.ai ? 'Generado por un modelo de lenguaje' : 'Sin clave de IA configurada: análisis por reglas'}>
+            <SparkIcon /> {data.source}
+          </span>
+        )}
+      </div>
+      {loading && !data ? (
+        <div className="skeleton" style={{ height: 140 }} />
+      ) : error ? (
+        <p className="subtle" style={{ margin: 0 }}>{error.message}</p>
+      ) : (
+        <>
+          <div className="insight-grid stagger">
+            {data.items.map((item) => (
+              <div key={item.title} className="insight">
+                <strong>{item.title}</strong>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="insight-tip">
+            <span className="chip chip-warn">Consejo</span> {data.tip}
+          </div>
+        </>
+      )}
+    </section>
+  );
+}
+
+const SparkIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" />
+    <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+  </svg>
+);
+
 export default function Stats() {
   const { isAdmin } = useAuth();
   const { data, loading, error, reload } = useFetch(isAdmin ? null : '/stats/me');
@@ -94,6 +139,10 @@ export default function Stats() {
         <Kpi label="Posición" value={`#${data.position}`} suffix={`de ${data.participants}`} />
         <Kpi label="Acierto de ganador" value={data.accuracy} suffix="%" />
         <Kpi label="Mejor racha" value={data.bestStreak} suffix={`actual ${data.currentStreak}`} />
+      </div>
+
+      <div style={{ marginTop: 14 }}>
+        <AiInsights />
       </div>
 
       <div className="two-col">

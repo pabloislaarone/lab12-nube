@@ -64,6 +64,10 @@ services:
       ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@marcador.pe}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
       DB_POOL_SIZE: ${API_DB_POOL_SIZE:-15}
+      # Estadísticas con IA (opcional): sin clave se usa el análisis automático
+      AI_PROVIDER: ${AI_PROVIDER:-anthropic}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-}
     deploy:
       # Escalamiento horizontal: varias réplicas idénticas y sin estado
       replicas: ${API_REPLICAS:-3}

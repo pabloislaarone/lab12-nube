@@ -244,6 +244,18 @@ class ApiFlowTest {
         rows.forEach(r -> assertThat(r.get("name").asText()).isNotEqualTo("Administrador"));
     }
 
+    @Test
+    @Order(16)
+    void estadisticasConIaRespondenConAnalisis() throws Exception {
+        mvc.perform(auth(get("/api/stats/me/insights"), tokenAna))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.items.length()").value(org.hamcrest.Matchers.greaterThan(0)))
+                .andExpect(jsonPath("$.tip").isNotEmpty())
+                .andExpect(jsonPath("$.ai").value(false)); // en pruebas no hay clave de IA
+        mvc.perform(auth(get("/api/stats/me/insights"), tokenAdmin))
+                .andExpect(status().isBadRequest());
+    }
+
     // ---------- utilidades ----------
 
     private String register(String name, String email) throws Exception {

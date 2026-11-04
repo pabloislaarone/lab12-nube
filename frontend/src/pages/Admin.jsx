@@ -263,7 +263,9 @@ function Tools({ onDone }) {
                   <td>
                     <span className="chip">{r.reason}</span>
                   </td>
-                  <td className="replica">{r.instance}</td>
+                  <td>
+                    <span className="replica">{r.instance}</span>
+                  </td>
                   <td className="right num">{r.usersProcessed}</td>
                   <td className="right num">{r.matchesProcessed}</td>
                   <td className="right num">{r.durationMs} ms</td>
