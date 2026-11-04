@@ -43,7 +43,7 @@ export default function Matches() {
             Puedes editar tu pronóstico hasta el pitazo inicial.{' '}
             {!isAdmin && data && (
               <span className="subtle">
-                Llevas {predicted} pronósticos · {open} partidos abiertos.
+                Llevas {predicted} {predicted === 1 ? 'pronóstico' : 'pronósticos'} · {open} {open === 1 ? 'partido abierto' : 'partidos abiertos'}.
               </span>
             )}
           </p>

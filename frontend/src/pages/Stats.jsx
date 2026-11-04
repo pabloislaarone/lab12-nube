@@ -54,7 +54,7 @@ function CumulativeChart({ points }) {
             <title>{`${p.label}: +${p.points} (total ${p.cumulative})`}</title>
           </circle>
           {(points.length <= 10 || i % 2 === 0) && (
-            <text x={x(i)} y={h - 8} textAnchor="middle" fontSize="10" fill="var(--text-3)">
+            <text x={x(i)} y={h - 8} textAnchor={i === points.length - 1 && points.length > 1 ? 'end' : i === 0 && points.length > 1 ? 'start' : 'middle'} fontSize="10" fill="var(--text-3)">
               {p.label}
             </text>
           )}
