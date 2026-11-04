@@ -1,14 +1,14 @@
-name: polla-mundialista
+name: marcador26
 
 # Variables comunes de la API y el worker
 x-backend-env: &backend-env
-  DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-polla}
-  DB_USER: ${POSTGRES_USER:-polla}
-  DB_PASSWORD: ${POSTGRES_PASSWORD:-polla}
+  DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-marcador}
+  DB_USER: ${POSTGRES_USER:-marcador}
+  DB_PASSWORD: ${POSTGRES_PASSWORD:-marcador}
   REDIS_HOST: redis
   RABBIT_HOST: rabbitmq
-  RABBIT_USER: ${RABBITMQ_USER:-polla}
-  RABBIT_PASSWORD: ${RABBITMQ_PASSWORD:-polla}
+  RABBIT_USER: ${RABBITMQ_USER:-marcador}
+  RABBIT_PASSWORD: ${RABBITMQ_PASSWORD:-marcador}
   SCORING_COMBINE_MODE: ${SCORING_COMBINE_MODE:-HIGHEST}
 
 services:
@@ -16,14 +16,14 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-polla}
-      POSTGRES_USER: ${POSTGRES_USER:-polla}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-polla}
+      POSTGRES_DB: ${POSTGRES_DB:-marcador}
+      POSTGRES_USER: ${POSTGRES_USER:-marcador}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marcador}
     command: postgres -c max_connections=200
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-polla} -d ${POSTGRES_DB:-polla}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-marcador} -d ${POSTGRES_DB:-marcador}"]
       interval: 5s
       timeout: 3s
       retries: 20
@@ -40,8 +40,8 @@ services:
   rabbitmq:
     image: rabbitmq:3.13-management-alpine
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-polla}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-polla}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-marcador}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-marcador}
     ports:
       - "15672:15672"   # consola web de RabbitMQ
     healthcheck:
@@ -57,11 +57,11 @@ services:
       context: ./backend
       args:
         MODULE: api
-    image: polla-api:latest
+    image: marcador-api:latest
     environment:
       <<: *backend-env
-      JWT_SECRET: ${JWT_SECRET:-polla-mundialista-tecsup-secreto-de-desarrollo-2026}
-      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@polla.pe}
+      JWT_SECRET: ${JWT_SECRET:-marcador26-tecsup-secreto-de-desarrollo-2026}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@marcador.pe}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
       DB_POOL_SIZE: ${API_DB_POOL_SIZE:-15}
     deploy:
@@ -90,7 +90,7 @@ services:
       context: ./backend
       args:
         MODULE: worker
-    image: polla-worker:latest
+    image: marcador-worker:latest
     environment:
       <<: *backend-env
       DB_POOL_SIZE: 5
@@ -120,7 +120,7 @@ services:
   # ---------------- Balanceador + frontend ----------------
   gateway:
     build: ./frontend
-    image: polla-gateway:latest
+    image: marcador-gateway:latest
     ports:
       - "${GATEWAY_PORT:-8080}:80"
     volumes:

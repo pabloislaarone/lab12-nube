@@ -40,7 +40,7 @@ export default function Login() {
           <span className="brand-mark">
             <BallIcon width={17} height={17} />
           </span>
-          Polla 26
+          Marcador 26
         </div>
         <div className="pitch" aria-hidden="true" />
         <div>
@@ -69,7 +69,7 @@ export default function Login() {
             </button>
           </div>
 
-          <h2 style={{ fontSize: 24, marginBottom: 6 }}>{mode === 'login' ? 'Bienvenido de vuelta' : 'Únete a la polla'}</h2>
+          <h2 style={{ fontSize: 24, marginBottom: 6 }}>{mode === 'login' ? 'Bienvenido de vuelta' : 'Únete a Marcador 26'}</h2>
           <p className="muted" style={{ margin: '0 0 22px' }}>
             {mode === 'login' ? 'Ingresa para ver tus pronósticos y tus salas.' : 'Crea tu cuenta en segundos, sin dinero real.'}
           </p>
@@ -109,9 +109,9 @@ export default function Login() {
           <details className="demo">
             <summary>Cuentas de prueba</summary>
             <p>
-              Administrador: <code>admin@polla.pe</code> / <code>admin123</code>
+              Administrador: <code>admin@marcador.pe</code> / <code>admin123</code>
               <br />
-              Participantes demo (después de generarlos en Admin): <code>demo01@polla.pe</code> / <code>demo123</code>
+              Participantes demo (después de generarlos en Admin): <code>demo01@marcador.pe</code> / <code>demo123</code>
             </p>
           </details>
         </div>

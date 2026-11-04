@@ -30,7 +30,7 @@ function useServerEvents() {
       } catch {
         /* evento sin datos */
       }
-      window.dispatchEvent(new CustomEvent('polla:ranking', { detail }));
+      window.dispatchEvent(new CustomEvent('marcador:ranking', { detail }));
       toast('Puntajes actualizados', { description: 'El ranking se recalculó con los últimos resultados.' });
     });
     return () => source.close();
@@ -82,7 +82,7 @@ export default function Layout() {
             <span className="brand-mark">
               <BallIcon width={17} height={17} />
             </span>
-            Polla 26
+            Marcador 26
           </NavLink>
           <nav className="nav" aria-label="Principal">
             {links.map((l) => (
@@ -107,7 +107,7 @@ export default function Layout() {
 
       <footer className="footer">
         <div className="footer-inner">
-          <span>Polla Mundialista 2026 · Ejercicio educativo, sin dinero real</span>
+          <span>Marcador 26 · Mundial 2026 · Ejercicio educativo, sin dinero real</span>
           <ReplicaIndicator />
         </div>
       </footer>

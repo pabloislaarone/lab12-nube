@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Polla Mundialista · sistema visual
+   Marcador 26 · sistema visual
    Movimiento basado en los principios de Emil Kowalski:
    - curvas personalizadas (nunca ease-in), duraciones < 300 ms
    - solo se animan transform y opacity
@@ -1046,7 +1046,7 @@ textarea.input {
   height: 100%;
   border-radius: 999px;
   transform-origin: left;
-  animation: grow 600ms var(--ease-out) both;
+  animation: grow 450ms var(--ease-out) both;
 }
 
 @keyframes grow {

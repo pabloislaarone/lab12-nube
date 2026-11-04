@@ -3,7 +3,7 @@ global:
 
 scrape_configs:
   # El DNS de Docker devuelve todas las réplicas: Prometheus las descubre solo
-  - job_name: polla-api
+  - job_name: marcador-api
     metrics_path: /actuator/prometheus
     dns_sd_configs:
       - names: ["api"]
@@ -11,7 +11,7 @@ scrape_configs:
         port: 8080
         refresh_interval: 10s
 
-  - job_name: polla-worker
+  - job_name: marcador-worker
     metrics_path: /actuator/prometheus
     dns_sd_configs:
       - names: ["worker"]

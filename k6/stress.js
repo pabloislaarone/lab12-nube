@@ -1,4 +1,4 @@
-// Prueba de estrés de la Polla Mundialista con k6.
+// Prueba de estrés de Marcador 26 con k6.
 // Simula participantes que miran partidos, pronostican, revisan su sala y el ranking.
 //
 // Variables:
@@ -82,7 +82,7 @@ function login(email, password) {
 
 // Se ejecuta una sola vez: prepara datos demo y obtiene tokens
 export function setup() {
-  const admin = login('admin@polla.pe', 'admin123');
+  const admin = login('admin@marcador.pe', 'admin123');
   if (!admin) throw new Error('No se pudo iniciar sesión como admin');
 
   const demo = http.post(`${BASE}/api/admin/demo`, JSON.stringify({ users: DEMO_USERS }), jsonHeaders(admin));
@@ -90,7 +90,7 @@ export function setup() {
 
   const tokens = [];
   for (let i = 1; i <= DEMO_USERS; i++) {
-    const token = login(`demo${String(i).padStart(2, '0')}@polla.pe`, 'demo123');
+    const token = login(`demo${String(i).padStart(2, '0')}@marcador.pe`, 'demo123');
     if (token) tokens.push(token);
   }
 

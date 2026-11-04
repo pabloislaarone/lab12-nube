@@ -4,11 +4,11 @@ server:
 
 spring:
   application:
-    name: polla-api
+    name: marcador-api
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/polla}
-    username: ${DB_USER:polla}
-    password: ${DB_PASSWORD:polla}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/marcador}
+    username: ${DB_USER:marcador}
+    password: ${DB_PASSWORD:marcador}
     hikari:
       maximum-pool-size: ${DB_POOL_SIZE:15}
   data:
@@ -40,7 +40,7 @@ management:
         enabled: true
   metrics:
     tags:
-      application: polla-api
+      application: marcador-api
       replica: ${app.instance-id}
     distribution:
       percentiles-histogram:
@@ -49,11 +49,11 @@ management:
 app:
   instance-id: ${HOSTNAME:api-local}
   jwt:
-    secret: ${JWT_SECRET:polla-mundialista-tecsup-secreto-de-desarrollo-2026}
+    secret: ${JWT_SECRET:marcador26-tecsup-secreto-de-desarrollo-2026}
     ttl-hours: ${JWT_TTL_HOURS:24}
   admin:
     name: ${ADMIN_NAME:Administrador}
-    email: ${ADMIN_EMAIL:admin@polla.pe}
+    email: ${ADMIN_EMAIL:admin@marcador.pe}
     password: ${ADMIN_PASSWORD:admin123}
   scoring:
     exact-points: ${SCORING_EXACT:5}

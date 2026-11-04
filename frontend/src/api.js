@@ -1,6 +1,6 @@
 // Cliente HTTP de la API. Guarda el JWT y avisa qué réplica respondió cada petición.
 
-const TOKEN_KEY = 'polla.token';
+const TOKEN_KEY = 'marcador.token';
 
 export const tokenStore = {
   get() {

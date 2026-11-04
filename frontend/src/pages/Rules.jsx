@@ -28,7 +28,7 @@ export default function Rules() {
       unit: 'puntos',
       title: '3 · Diferencia de goles correcta',
       text: highest
-        ? 'Aciertas el margen de victoria. Como en esta polla vale solo la regla más alta, este acierto queda cubierto por el de ganador (3 puntos).'
+        ? 'Aciertas el margen de victoria. Como en este juego vale solo la regla más alta, este acierto queda cubierto por el de ganador (3 puntos).'
         : 'Aciertas el margen de victoria. En el modo acumulativo se suma al punto por ganador.',
       examples: [
         `Pronóstico 3–1 · Final 2–0 → ${highest ? '+' + r.winnerPoints + ' (vale la más alta)' : '+' + (r.winnerPoints + r.goalDiffPoints) + ' (3 + 2)'}`,

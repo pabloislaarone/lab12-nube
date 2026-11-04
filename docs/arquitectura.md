@@ -2,7 +2,7 @@
 
 ## 1. Idea general
 
-La aplicación es una polla mundialista: los participantes pronostican el marcador de cada partido y suman puntos según qué tan cerca estuvieron. Desde el inicio la pensamos para que **pueda crecer horizontalmente**, es decir, que si llegan más usuarios basta con levantar más copias del backend en lugar de comprar un servidor más grande.
+La aplicación es una app de pronósticos: los participantes pronostican el marcador de cada partido y suman puntos según qué tan cerca estuvieron. Desde el inicio la pensamos para que **pueda crecer horizontalmente**, es decir, que si llegan más usuarios basta con levantar más copias del backend en lugar de comprar un servidor más grande.
 
 Para lograrlo, la arquitectura separa tres responsabilidades:
 
@@ -88,4 +88,4 @@ Cuando el worker termina, publica un aviso en un canal de Redis. **Todas** las r
 
 ## 7. Monitoreo (opcional)
 
-Con `docker compose --profile monitoring up -d` se levantan Prometheus y Grafana. Prometheus descubre las réplicas por DNS y el tablero **"Polla Mundialista · Escalamiento"** muestra peticiones por segundo, latencia p95, CPU y memoria **por réplica**, y cuántos recálculos hizo cada worker.
+Con `docker compose --profile monitoring up -d` se levantan Prometheus y Grafana. Prometheus descubre las réplicas por DNS y el tablero **"Marcador 26 · Escalamiento"** muestra peticiones por segundo, latencia p95, CPU y memoria **por réplica**, y cuántos recálculos hizo cada worker.

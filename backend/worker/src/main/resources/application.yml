@@ -3,11 +3,11 @@ server:
 
 spring:
   application:
-    name: polla-worker
+    name: marcador-worker
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/polla}
-    username: ${DB_USER:polla}
-    password: ${DB_PASSWORD:polla}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/marcador}
+    username: ${DB_USER:marcador}
+    password: ${DB_PASSWORD:marcador}
     hikari:
       maximum-pool-size: ${DB_POOL_SIZE:5}
   data:
@@ -37,7 +37,7 @@ management:
         include: health,info,prometheus
   metrics:
     tags:
-      application: polla-worker
+      application: marcador-worker
       replica: ${worker.instance-id}
 
 worker:

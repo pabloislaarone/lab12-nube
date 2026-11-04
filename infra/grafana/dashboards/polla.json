@@ -1,6 +1,6 @@
 {
-  "uid": "polla-escalamiento",
-  "title": "Polla Mundialista · Escalamiento",
+  "uid": "marcador-escalamiento",
+  "title": "Marcador 26 · Escalamiento",
   "schemaVersion": 39,
   "version": 1,
   "refresh": "5s",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (replica) (rate(http_server_requests_seconds_count{application=\"polla-api\",uri!~\"/actuator.*\"}[30s]))",
+          "expr": "sum by (replica) (rate(http_server_requests_seconds_count{application=\"marcador-api\",uri!~\"/actuator.*\"}[30s]))",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -83,7 +83,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "histogram_quantile(0.95, sum by (le, replica) (rate(http_server_requests_seconds_bucket{application=\"polla-api\",uri!~\"/actuator.*\"}[30s])))",
+          "expr": "histogram_quantile(0.95, sum by (le, replica) (rate(http_server_requests_seconds_bucket{application=\"marcador-api\",uri!~\"/actuator.*\"}[30s])))",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -124,7 +124,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "process_cpu_usage{application=\"polla-api\"}",
+          "expr": "process_cpu_usage{application=\"marcador-api\"}",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -165,7 +165,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (replica) (jvm_memory_used_bytes{application=\"polla-api\",area=\"heap\"})",
+          "expr": "sum by (replica) (jvm_memory_used_bytes{application=\"marcador-api\",area=\"heap\"})",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -206,7 +206,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (replica) (rate(http_server_requests_seconds_count{application=\"polla-api\",uri!~\"/actuator.*\",status=~\"5..\"}[30s]))",
+          "expr": "sum by (replica) (rate(http_server_requests_seconds_count{application=\"marcador-api\",uri!~\"/actuator.*\",status=~\"5..\"}[30s]))",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -247,7 +247,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (replica) (increase(spring_rabbitmq_listener_seconds_count{application=\"polla-worker\"}[5m]))",
+          "expr": "sum by (replica) (increase(spring_rabbitmq_listener_seconds_count{application=\"marcador-worker\"}[5m]))",
           "legendFormat": "{{replica}}",
           "datasource": {
             "type": "prometheus",
@@ -258,6 +258,6 @@
     }
   ],
   "tags": [
-    "polla"
+    "marcador"
   ]
 }

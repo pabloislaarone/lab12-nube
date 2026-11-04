@@ -38,8 +38,8 @@ export function useRankingUpdates(callback) {
   ref.current = callback;
   useEffect(() => {
     const handler = (event) => ref.current(event.detail);
-    window.addEventListener('polla:ranking', handler);
-    return () => window.removeEventListener('polla:ranking', handler);
+    window.addEventListener('marcador:ranking', handler);
+    return () => window.removeEventListener('marcador:ranking', handler);
   }, []);
 }
 

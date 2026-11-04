@@ -211,7 +211,7 @@ function Tools({ onDone }) {
         <div className="card card-pad">
           <h3 style={{ fontSize: 16, marginBottom: 6 }}>Simulador de demo</h3>
           <p className="muted" style={{ margin: '0 0 14px', fontSize: 13.5 }}>
-            Crea participantes (<code>demoNN@polla.pe</code> / <code>demo123</code>) con pronósticos anticipados, normales, de último minuto y faltantes. Carga resultados de los partidos que ya empezaron y arma la sala <code>DEMO2026</code>.
+            Crea participantes (<code>demoNN@marcador.pe</code> / <code>demo123</code>) con pronósticos anticipados, normales, de último minuto y faltantes. Carga resultados de los partidos que ya empezaron y arma la sala <code>DEMO2026</code>.
           </p>
           <div className="row">
             <input className="input" style={{ width: 90 }} type="number" min="2" max="200" value={users} onChange={(e) => setUsers(e.target.value)} aria-label="Cantidad de participantes" />

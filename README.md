@@ -1,4 +1,4 @@
-# Polla Mundialista 2026
+# Marcador 26 · Mundial 2026
 
 ## Estructura del proyecto
 
@@ -31,10 +31,10 @@ docker compose up -d --build
 ```
 
 - Aplicación: http://localhost:8080
-- Administrador: `admin@polla.pe` / `admin123`
-- Consola de RabbitMQ: http://localhost:15672 (`polla` / `polla`)
+- Administrador: `admin@marcador.pe` / `admin123`
+- Consola de RabbitMQ: http://localhost:15672 (`marcador` / `marcador`)
 
-Datos de prueba: entra como admin → **Admin → Herramientas → Generar datos demo**. Luego puedes ingresar con `demo01@polla.pe` / `demo123`.
+Datos de prueba: entra como admin → **Admin → Herramientas → Generar datos demo**. Luego puedes ingresar con `demo01@marcador.pe` / `demo123`.
 
 ### Escalar la API
 

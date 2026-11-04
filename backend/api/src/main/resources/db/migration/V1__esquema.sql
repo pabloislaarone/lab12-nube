@@ -1,4 +1,4 @@
--- Esquema de la Polla Mundialista
+-- Esquema de Marcador 26
 
 CREATE TABLE users (
     id            BIGSERIAL PRIMARY KEY,
