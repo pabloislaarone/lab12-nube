@@ -4,7 +4,7 @@
 // Variables:
 //   BASE_URL     URL del balanceador (por defecto http://localhost:8080)
 //   REPLICAS     etiqueta para el reporte (1, 3...)
-//   PROFILE      "stress" (por defecto) o "smoke" (prueba corta)
+//   PROFILE      stress (usuarios realistas), saturacion (sube la tasa hasta el limite) o smoke
 //   RESULTS_DIR  carpeta donde se guarda el resumen (por defecto /results)
 
 import http from 'k6/http';
@@ -33,14 +33,33 @@ const STAGES = {
   ],
 };
 
+// "saturacion": tasa de peticiones creciente y sin pausas, para encontrar el punto de quiebre
+const SCENARIOS = {
+  saturacion: {
+    executor: 'ramping-arrival-rate',
+    startRate: 50,
+    timeUnit: '1s',
+    preAllocatedVUs: 300,
+    maxVUs: 1500,
+    stages: [
+      { duration: '30s', target: 300 },
+      { duration: '1m', target: 900 },
+      { duration: '1m', target: 1800 },
+      { duration: '30s', target: 1800 },
+    ],
+  },
+  default: {
+    executor: 'ramping-vus',
+    startVUs: 0,
+    stages: STAGES[PROFILE] || STAGES.stress,
+    gracefulRampDown: '10s',
+  },
+};
+const THINK = PROFILE !== 'saturacion';
+
 export const options = {
   scenarios: {
-    participantes: {
-      executor: 'ramping-vus',
-      startVUs: 0,
-      stages: STAGES[PROFILE] || STAGES.stress,
-      gracefulRampDown: '10s',
-    },
+    participantes: SCENARIOS[PROFILE] || SCENARIOS.default,
   },
   thresholds: {
     http_req_failed: ['rate<0.02'],
@@ -118,8 +137,8 @@ export default function (data) {
     check(res, { 'estadísticas 200': (r) => r.status === 200 });
   }
 
-  // Tiempo de "lectura" de una persona real
-  sleep(0.3 + Math.random() * 0.7);
+  // Tiempo de "lectura" de una persona real (no aplica en saturacion)
+  if (THINK) sleep(0.3 + Math.random() * 0.7);
 }
 
 function fmt(n, digits = 1) {
@@ -145,10 +164,11 @@ export function handleSummary(data) {
     checks_ok_pct: m.checks ? m.checks.values.rate * 100 : null,
     vus_max: m.vus_max ? m.vus_max.values.max : null,
     predicciones: m.predicciones_guardadas ? m.predicciones_guardadas.values.count : 0,
+    iteraciones_descartadas: m.dropped_iterations ? m.dropped_iterations.values.count : 0,
   };
 
   const md = [
-    `### Prueba de estrés con ${REPLICAS} réplica(s) de la API`,
+    `### Escenario "${PROFILE}" con ${REPLICAS} réplica(s) de la API`,
     '',
     '| Métrica | Valor |',
     '|---|---|',
@@ -163,11 +183,12 @@ export function handleSummary(data) {
     `| Errores | ${fmt(row.errores_pct, 2)} % |`,
     `| Checks correctos | ${fmt(row.checks_ok_pct, 2)} % |`,
     `| Pronósticos guardados | ${row.predicciones} |`,
+    `| Iteraciones descartadas (k6 no alcanzó a enviarlas) | ${row.iteraciones_descartadas} |`,
     '',
   ].join('\n');
 
   const out = { stdout: `\n${md}\n` };
-  out[`${RESULTS_DIR}/k6-${REPLICAS}-replicas.json`] = JSON.stringify(row, null, 2);
-  out[`${RESULTS_DIR}/k6-${REPLICAS}-replicas.md`] = md;
+  out[`${RESULTS_DIR}/k6-${PROFILE}-${REPLICAS}-replicas.json`] = JSON.stringify(row, null, 2);
+  out[`${RESULTS_DIR}/k6-${PROFILE}-${REPLICAS}-replicas.md`] = md;
   return out;
 }
