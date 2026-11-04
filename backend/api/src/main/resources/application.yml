@@ -1,0 +1,72 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: marcador-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/marcador}
+    username: ${DB_USER:marcador}
+    password: ${DB_PASSWORD:marcador}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:15}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PASSWORD:guest}
+  flyway:
+    enabled: true
+  threads:
+    virtual:
+      enabled: true
+  mvc:
+    async:
+      request-timeout: -1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: marcador-api
+      replica: ${app.instance-id}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+
+app:
+  instance-id: ${HOSTNAME:api-local}
+  jwt:
+    secret: ${JWT_SECRET:marcador26-tecsup-secreto-de-desarrollo-2026}
+    ttl-hours: ${JWT_TTL_HOURS:24}
+  admin:
+    name: ${ADMIN_NAME:Administrador}
+    email: ${ADMIN_EMAIL:admin@marcador.pe}
+    password: ${ADMIN_PASSWORD:admin123}
+  scoring:
+    exact-points: ${SCORING_EXACT:5}
+    winner-points: ${SCORING_WINNER:3}
+    goal-diff-points: ${SCORING_GOAL_DIFF:2}
+    streak-length: ${SCORING_STREAK_LENGTH:3}
+    streak-bonus: ${SCORING_STREAK_BONUS:2}
+    early-bonus: ${SCORING_EARLY_BONUS:1}
+    early-threshold-hours: ${SCORING_EARLY_HOURS:24}
+    last-minute-window-minutes: ${SCORING_LAST_MINUTE:10}
+    combine-mode: ${SCORING_COMBINE_MODE:HIGHEST}
+    early-bonus-requires-hit: ${SCORING_EARLY_REQUIRES_HIT:true}
+
+logging:
+  pattern:
+    level: "%5p [${app.instance-id}]"

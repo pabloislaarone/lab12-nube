@@ -1,0 +1,40 @@
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Arial','fontSize':'15px','primaryColor':'#ffffff','primaryBorderColor':'#2f7d1f','lineColor':'#4b5a51','clusterBkg':'#f6f5f0','clusterBorder':'#c9cfc9'}}}%%
+flowchart TB
+    U["🌐 Navegador<br/>React + Vite"]
+
+    GW["gateway · Nginx<br/>sirve el frontend y balancea /api<br/>(least_conn + DNS de Docker)"]
+
+    subgraph API["API Spring Boot · N réplicas sin estado (JWT)"]
+        direction LR
+        A1["api #1"] ~~~ A2["api #2"] ~~~ A3["api #3"]
+    end
+
+    MQ{{"RabbitMQ<br/>cola scoring.recompute"}}
+
+    subgraph WK["Worker de puntuación · réplicas que compiten por los mensajes"]
+        direction LR
+        W1["worker #1"] ~~~ W2["worker #2"]
+    end
+
+    subgraph DATA["Datos compartidos"]
+        direction LR
+        PG[("PostgreSQL 16<br/>usuarios · salas · partidos<br/>predicciones · puntajes")]
+        RD[("Redis 7<br/>caché del ranking<br/>pub/sub tiempo real")]
+    end
+
+    U -->|"HTTP :8080"| GW
+    GW -->|"/api/*"| API
+    API -->|"1 · publica 'partido finalizado'"| MQ
+    MQ -->|"2 · entrega a un solo worker"| WK
+    API <-->|"lee / escribe"| DATA
+    WK -->|"3 · recalcula puntajes, limpia caché y avisa"| DATA
+    GW -. "4 · SSE /api/stream: ranking actualizado" .-> U
+
+    classDef edge fill:#e8f3e3,stroke:#2f7d1f,color:#111813
+    classDef app fill:#ffffff,stroke:#2f7d1f,color:#111813
+    classDef infra fill:#fff7e6,stroke:#a86a00,color:#111813
+    classDef store fill:#eaf2fb,stroke:#1f6fb2,color:#111813
+    class U,GW edge
+    class A1,A2,A3,W1,W2 app
+    class MQ infra
+    class PG,RD store

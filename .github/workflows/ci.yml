@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend (unitarias + integración)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Compilar y ejecutar pruebas
+        shell: bash
+        run: |
+          set -o pipefail
+          mvn -B -f backend/pom.xml verify 2>&1 | tee backend-build.log
+      - name: Reportes de pruebas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-pruebas
+          path: backend/**/target/surefire-reports/
+
+  frontend:
+    name: Frontend (build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Compilar
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+
+  stress:
+    name: Docker + balanceo + estrés (1 vs 3 réplicas)
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Levantar el sistema completo
+        run: docker compose up -d --build --wait
+      - name: Estado de los contenedores
+        if: always()
+        run: docker compose ps
+      - name: Evidencia de balanceo
+        run: ./scripts/balanceo.sh 30 | tee balanceo.log
+      - name: Prueba de estrés 1 vs 3 réplicas
+        run: ./scripts/stress-compare.sh 2>&1 | tee stress.log
+      - name: Bitácora del worker
+        if: always()
+        run: |
+          docker compose logs worker --no-color | grep -E "Evento recibido|recalculados" | tail -20 | tee worker.log || true
+          docker compose logs gateway --no-color | tail -20 | tee gateway.log || true
+      - name: Resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-estres
+          path: |
+            docs/resultados/
+            balanceo.log
+            stress.log

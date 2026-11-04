@@ -1,0 +1,17 @@
+{
+  "replicas": "3",
+  "perfil": "stress",
+  "peticiones": 49507,
+  "rps": 243.23435905376627,
+  "lat_avg_ms": 1.2539296812975953,
+  "lat_med_ms": 1.178833,
+  "lat_p90_ms": 1.656109,
+  "lat_p95_ms": 1.9249276999999996,
+  "lat_p99_ms": 2.8864139400000015,
+  "lat_max_ms": 309.47281,
+  "errores_pct": 0,
+  "checks_ok_pct": 100,
+  "vus_max": 300,
+  "predicciones": 9941,
+  "iteraciones_descartadas": 0
+}

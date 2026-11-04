@@ -1,0 +1,8 @@
+[0f33ac8fa56d] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793803888454]
+[0f33ac8fa56d] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Puntajes recalculados: 40 usuarios, 8 partidos en 293 ms
+[0f33ac8fa56d] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793804300360]
+[0f33ac8fa56d] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Puntajes recalculados: 40 usuarios, 8 partidos en 95 ms
+[951d85112690] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793804099458]
+[951d85112690] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Puntajes recalculados: 40 usuarios, 8 partidos en 381 ms
+[951d85112690] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Evento recibido: ScoringEvent[matchId=null, reason=DEMO, requestedAt=1793804510744]
+[951d85112690] 1 --- [polla-worker] [ntContainer#0-1] p.e.tecsup.polla.worker.ScoringListener  : Puntajes recalculados: 40 usuarios, 8 partidos en 80 ms

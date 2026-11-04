@@ -1,0 +1,46 @@
+erDiagram
+    users ||--o{ predictions : registra
+    matches ||--o{ predictions : recibe
+    users ||--o{ prediction_scores : obtiene
+    matches ||--o{ prediction_scores : puntua
+    users ||--|| user_scores : acumula
+    users ||--o{ rooms : crea
+    rooms ||--o{ room_members : tiene
+    users ||--o{ room_members : pertenece
+
+    users { bigint id PK
+        varchar name
+        varchar email UK
+        varchar role }
+    matches { bigint id PK
+        varchar home_team
+        varchar away_team
+        timestamptz kickoff_at
+        varchar status
+        int home_goals
+        int away_goals }
+    predictions { bigint id PK
+        bigint user_id FK
+        bigint match_id FK
+        int home_goals
+        int away_goals
+        timestamptz submitted_at }
+    prediction_scores { bigint user_id PK
+        bigint match_id PK
+        varchar rule
+        int base_points
+        int early_bonus
+        int streak_bonus
+        int total }
+    user_scores { bigint user_id PK
+        int total_points
+        int exact_hits
+        int current_streak
+        int best_streak }
+    rooms { bigint id PK
+        varchar name
+        varchar invite_code UK
+        bigint owner_id FK }
+    room_members { bigint room_id PK
+        bigint user_id PK
+        varchar role }

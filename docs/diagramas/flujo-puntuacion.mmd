@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    actor Admin
+    participant GW as Nginx
+    participant API as API (cualquier réplica)
+    participant DB as PostgreSQL
+    participant MQ as RabbitMQ
+    participant WK as Worker (una réplica)
+    participant R as Redis
+    actor Usuarios
+
+    Admin->>GW: PUT /api/admin/matches/{id}/result
+    GW->>API: balanceo least_conn
+    API->>DB: UPDATE matches SET status = FINISHED
+    API->>MQ: publica ScoringEvent
+    API-->>Admin: 200 OK (no espera el cálculo)
+    MQ->>WK: entrega el mensaje a un solo worker
+    WK->>DB: pg_advisory_xact_lock (exclusión mutua)
+    WK->>DB: lee partidos finalizados y predicciones
+    WK->>WK: ScoringEngine aplica las 5 reglas
+    WK->>DB: reemplaza prediction_scores y user_scores
+    WK->>R: borra lb:* y publica "ranking-updated"
+    R-->>API: todas las réplicas reciben el aviso
+    API-->>Usuarios: evento SSE "ranking"
+    Usuarios->>GW: GET /api/ranking (se vuelve a cachear)

@@ -1,0 +1,3 @@
+Réplica 0d052bb92561   atendió 10 peticiones
+Réplica 68e9cbf6dcd1   atendió 10 peticiones
+Réplica f1cdb841ed22   atendió 10 peticiones
