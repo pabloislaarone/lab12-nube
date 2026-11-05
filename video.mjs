@@ -35,6 +35,7 @@ async function done(r) {
   fs.renameSync(await v.path(), `${OUT}/raw/${r.name}.webm`);
   console.log('video', r.name);
 }
+process.on('unhandledRejection', async (e) => { console.error('ERROR', e); process.exit(1); });
 const cap = (p, t) => p.evaluate((t) => window.__cap && window.__cap(t), t);
 const wait = (p, ms) => p.waitForTimeout(ms);
 async function go(p, path, caption) {

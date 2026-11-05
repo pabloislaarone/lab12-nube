@@ -42,7 +42,8 @@ jobs:
       - name: Grabar escenas
         run: |
           cd ev && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
-          node video.mjs ../out
+          node video.mjs ../out > ../out/video.log 2>&1 || (cat ../out/video.log; exit 1)
+          cat ../out/video.log
       - name: Log del worker al final
         working-directory: app
         run: |
