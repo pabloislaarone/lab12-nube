@@ -1,0 +1,378 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] marcador26                                                         [pom]
+[INFO] scoring-core                                                       [jar]
+[INFO] api                                                                [jar]
+[INFO] worker                                                             [jar]
+[INFO] 
+[INFO] -----------------< pe.edu.tecsup.marcador:marcador26 >------------------
+[INFO] Building marcador26 1.0.0                                          [1/4]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------< pe.edu.tecsup.marcador:scoring-core >-----------------
+[INFO] Building scoring-core 1.0.0                                        [2/4]
+[INFO]   from scoring-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ scoring-core ---
+[INFO] skip non existing resourceDirectory /home/runner/work/lab12-nube/lab12-nube/app/backend/scoring-core/src/main/resources
+[INFO] skip non existing resourceDirectory /home/runner/work/lab12-nube/lab12-nube/app/backend/scoring-core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ scoring-core ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ scoring-core ---
+[INFO] skip non existing resourceDirectory /home/runner/work/lab12-nube/lab12-nube/app/backend/scoring-core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ scoring-core ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ scoring-core ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.tecsup.marcador.scoring.ScoringEngineTest
+[INFO] Running Regla 5: predicción anticipada y último minuto
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in Regla 5: predicción anticipada y último minuto
+[INFO] Running Regla 4: bonus por racha
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in Regla 4: bonus por racha
+[INFO] Running Modo acumulativo (configurable)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in Modo acumulativo (configurable)
+[INFO] Running Reglas 1, 2 y 3 (modo regla más alta)
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in Reglas 1, 2 y 3 (modo regla más alta)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 s -- in pe.edu.tecsup.marcador.scoring.ScoringEngineTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ scoring-core ---
+[INFO] Building jar: /home/runner/work/lab12-nube/lab12-nube/app/backend/scoring-core/target/scoring-core-1.0.0.jar
+[INFO] 
+[INFO] ---------------------< pe.edu.tecsup.marcador:api >---------------------
+[INFO] Building api 1.0.0                                                 [3/4]
+[INFO]   from api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 33 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ api ---
+[INFO] skip non existing resourceDirectory /home/runner/work/lab12-nube/lab12-nube/app/backend/api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.tecsup.marcador.api.ApiFlowTest
+02:06:31.149 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.tecsup.marcador.api.ApiFlowTest]: ApiFlowTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:06:31.278 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.tecsup.marcador.api.ApiApplication for test class pe.edu.tecsup.marcador.api.ApiFlowTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-11-05T02:06:31.692Z  INFO [api-local] 2523 --- [marcador-api] [           main] pe.edu.tecsup.marcador.api.ApiFlowTest   : Starting ApiFlowTest using Java 21.0.13 with PID 2523 (started by runner in /home/runner/work/lab12-nube/lab12-nube/app/backend/api)
+2026-11-05T02:06:31.694Z  INFO [api-local] 2523 --- [marcador-api] [           main] pe.edu.tecsup.marcador.api.ApiFlowTest   : No active profile set, falling back to 1 default profile: "default"
+2026-11-05T02:06:32.801Z  INFO [api-local] 2523 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-05T02:06:32.804Z  INFO [api-local] 2523 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-05T02:06:32.839Z  INFO [api-local] 2523 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-11-05T02:06:33.345Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2026-11-05T02:06:33.348Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-11-05T02:06:33.403Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.21.4
+2026-11-05T02:06:33.843Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2026-11-05T02:06:33.846Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2026-11-05T02:06:33.864Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 29.4.2
+  API Version: 1.54
+  Operating System: Ubuntu 26.04.1 LTS
+  Total Memory: 15983 MB
+2026-11-05T02:06:34.013Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.testcontainers/ryuk:0.12.0            : Pulling docker image: testcontainers/ryuk:0.12.0. Please be patient; this may take some time but only needs to be done once.
+2026-11-05T02:06:34.353Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Starting to pull image
+2026-11-05T02:06:34.366Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-11-05T02:06:34.752Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  2 pending,  1 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:34.753Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  1 pending,  2 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:34.753Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  0 pending,  3 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-11-05T02:06:34.853Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  0 pending,  3 downloaded,  1 extracted, (1 bytes/0 bytes)
+2026-11-05T02:06:34.856Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  0 pending,  3 downloaded,  2 extracted, (1 bytes/0 bytes)
+2026-11-05T02:06:34.857Z  INFO [api-local] 2523 --- [marcador-api] [eam--1900126211] tc.testcontainers/ryuk:0.12.0            : Pulling image layers:  0 pending,  3 downloaded,  3 extracted, (1 bytes/0 bytes)
+2026-11-05T02:06:34.861Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.testcontainers/ryuk:0.12.0            : Image testcontainers/ryuk:0.12.0 pull took PT0.848056891S
+2026-11-05T02:06:34.910Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.testcontainers/ryuk:0.12.0            : Creating container for image: testcontainers/ryuk:0.12.0
+2026-11-05T02:06:35.008Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.testcontainers/ryuk:0.12.0            : Container testcontainers/ryuk:0.12.0 is starting: 092ac271046893573817bd93240b29e37215376e171f04130bdd3d47237f9ade
+2026-11-05T02:06:35.319Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.testcontainers/ryuk:0.12.0            : Container testcontainers/ryuk:0.12.0 started in PT0.408478336S
+2026-11-05T02:06:35.324Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-11-05T02:06:35.325Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.DockerClientFactory   : Checking the system...
+2026-11-05T02:06:35.325Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2026-11-05T02:06:35.329Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.redis:7-alpine                        : Pulling docker image: redis:7-alpine. Please be patient; this may take some time but only needs to be done once.
+2026-11-05T02:06:35.541Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Starting to pull image
+2026-11-05T02:06:35.542Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-11-05T02:06:35.736Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  6 pending,  1 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.737Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  5 pending,  2 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.738Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  4 pending,  3 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.739Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  3 pending,  4 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.836Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  2 pending,  5 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.837Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  2 pending,  6 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.838Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  2 pending,  7 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.838Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:35.939Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  1 extracted, (2 bytes/? MB)
+2026-11-05T02:06:35.944Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  2 extracted, (2 bytes/? MB)
+2026-11-05T02:06:36.038Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  3 extracted, (2 bytes/? MB)
+2026-11-05T02:06:36.136Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  4 extracted, (3 bytes/? MB)
+2026-11-05T02:06:36.138Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  5 extracted, (3 bytes/? MB)
+2026-11-05T02:06:36.140Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  6 extracted, (3 bytes/? MB)
+2026-11-05T02:06:36.142Z  INFO [api-local] 2523 --- [marcador-api] [eam--1857950428] tc.redis:7-alpine                        : Pulling image layers:  1 pending,  8 downloaded,  7 extracted, (3 bytes/? MB)
+2026-11-05T02:06:36.151Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.redis:7-alpine                        : Image redis:7-alpine pull took PT0.821535821S
+2026-11-05T02:06:36.194Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.redis:7-alpine                        : Creating container for image: redis:7-alpine
+2026-11-05T02:06:36.251Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.redis:7-alpine                        : Container redis:7-alpine is starting: 8c9c40fe4c9e5cbfe79407dc38ed8c3c8393ff4df51d878e78a15c551826e6a5
+2026-11-05T02:06:36.498Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.redis:7-alpine                        : Container redis:7-alpine started in PT0.303289568S
+2026-11-05T02:06:36.500Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.rabbitmq:3.13-management-alpine       : Pulling docker image: rabbitmq:3.13-management-alpine. Please be patient; this may take some time but only needs to be done once.
+2026-11-05T02:06:36.727Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Starting to pull image
+2026-11-05T02:06:36.728Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-11-05T02:06:37.008Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  9 pending,  1 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:37.010Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  8 pending,  2 downloaded,  0 extracted, (10 MB/? MB)
+2026-11-05T02:06:37.011Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  7 pending,  3 downloaded,  0 extracted, (10 MB/? MB)
+2026-11-05T02:06:37.012Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  6 pending,  4 downloaded,  0 extracted, (10 MB/? MB)
+2026-11-05T02:06:37.014Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  5 pending,  5 downloaded,  0 extracted, (10 MB/? MB)
+2026-11-05T02:06:37.016Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  4 pending,  6 downloaded,  0 extracted, (21 MB/? MB)
+2026-11-05T02:06:37.106Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  4 pending,  7 downloaded,  0 extracted, (21 MB/? MB)
+2026-11-05T02:06:37.108Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  3 pending,  8 downloaded,  0 extracted, (21 MB/? MB)
+2026-11-05T02:06:37.109Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  3 pending,  9 downloaded,  0 extracted, (34 MB/? MB)
+2026-11-05T02:06:37.110Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  2 pending, 10 downloaded,  0 extracted, (49 MB/? MB)
+2026-11-05T02:06:37.206Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  1 pending, 11 downloaded,  0 extracted, (49 MB/? MB)
+2026-11-05T02:06:37.207Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  0 extracted, (49 MB/76 MB)
+2026-11-05T02:06:37.209Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  1 extracted, (49 MB/76 MB)
+2026-11-05T02:06:37.622Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  2 extracted, (49 MB/76 MB)
+2026-11-05T02:06:37.815Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  3 extracted, (49 MB/76 MB)
+2026-11-05T02:06:37.913Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  4 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.207Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  5 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.208Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  6 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.211Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  7 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.213Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  8 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.216Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded,  9 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.460Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pulling image layers:  0 pending, 12 downloaded, 10 extracted, (49 MB/76 MB)
+2026-11-05T02:06:38.461Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.rabbitmq:3.13-management-alpine       : Image rabbitmq:3.13-management-alpine pull took PT1.960622954S
+2026-11-05T02:06:38.461Z  INFO [api-local] 2523 --- [marcador-api] [ream-2043097599] tc.rabbitmq:3.13-management-alpine       : Pull complete. 12 layers, pulled in 1s (downloaded 49 MB at 49 MB/s)
+2026-11-05T02:06:38.504Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.rabbitmq:3.13-management-alpine       : Creating container for image: rabbitmq:3.13-management-alpine
+2026-11-05T02:06:38.753Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.rabbitmq:3.13-management-alpine       : Container rabbitmq:3.13-management-alpine is starting: 4d5f8fccc2d06e10ce775edea66ed2dc4b693dc5b5e035efd4422adeb299f3b8
+2026-11-05T02:06:44.917Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.rabbitmq:3.13-management-alpine       : Container rabbitmq:3.13-management-alpine started in PT6.412508755S
+2026-11-05T02:06:44.920Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Pulling docker image: postgres:16-alpine. Please be patient; this may take some time but only needs to be done once.
+2026-11-05T02:06:45.186Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Starting to pull image
+2026-11-05T02:06:45.187Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-11-05T02:06:45.428Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers: 10 pending,  1 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:45.429Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  9 pending,  2 downloaded,  0 extracted, (0 bytes/? MB)
+2026-11-05T02:06:45.429Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  8 pending,  3 downloaded,  0 extracted, (3 MB/? MB)
+2026-11-05T02:06:45.432Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  7 pending,  4 downloaded,  0 extracted, (3 MB/? MB)
+2026-11-05T02:06:45.434Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  6 pending,  5 downloaded,  0 extracted, (3 MB/? MB)
+2026-11-05T02:06:45.435Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  5 pending,  6 downloaded,  0 extracted, (3 MB/? MB)
+2026-11-05T02:06:45.435Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  4 pending,  7 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.435Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  3 pending,  8 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.435Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  2 pending,  9 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.525Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  2 pending, 10 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.526Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 11 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.528Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  0 extracted, (5 MB/? MB)
+2026-11-05T02:06:45.628Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  1 extracted, (56 MB/? MB)
+2026-11-05T02:06:45.632Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  2 extracted, (56 MB/? MB)
+2026-11-05T02:06:45.642Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  3 extracted, (56 MB/? MB)
+2026-11-05T02:06:45.645Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  4 extracted, (56 MB/? MB)
+2026-11-05T02:06:45.728Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  1 pending, 12 downloaded,  5 extracted, (86 MB/? MB)
+2026-11-05T02:06:45.826Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded,  5 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.515Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded,  6 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.516Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded,  7 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.518Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded,  8 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.521Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded,  9 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.522Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded, 10 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.524Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pulling image layers:  0 pending, 13 downloaded, 11 extracted, (86 MB/109 MB)
+2026-11-05T02:06:47.525Z  INFO [api-local] 2523 --- [marcador-api] [ream--180489640] tc.postgres:16-alpine                    : Pull complete. 13 layers, pulled in 2s (downloaded 86 MB at 43 MB/s)
+2026-11-05T02:06:47.525Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Image postgres:16-alpine pull took PT2.605478592S
+2026-11-05T02:06:47.569Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Creating container for image: postgres:16-alpine
+2026-11-05T02:06:48.052Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Container postgres:16-alpine is starting: d44dd4e1a756eebf3240da94fecf1bc884e52023ff5c6f1c1eb60567df050c80
+2026-11-05T02:06:49.520Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Container postgres:16-alpine started in PT1.950968966S
+2026-11-05T02:06:49.521Z  INFO [api-local] 2523 --- [marcador-api] [           main] tc.postgres:16-alpine                    : Container is started (JDBC URL: jdbc:postgresql://localhost:32774/test?loggerLevel=OFF)
+2026-11-05T02:06:49.994Z  INFO [api-local] 2523 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:32774/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-11-05T02:06:50.029Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-11-05T02:06:50.031Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.014s)
+2026-11-05T02:06:50.044Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-11-05T02:06:50.133Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-11-05T02:06:50.159Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - esquema"
+2026-11-05T02:06:50.239Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - partidos demo"
+2026-11-05T02:06:50.255Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.068s)
+2026-11-05T02:06:51.420Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-11-05T02:06:51.884Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-05T02:06:51.884Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-05T02:06:51.886Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-11-05T02:06:52.380Z  INFO [api-local] 2523 --- [marcador-api] [           main] pe.edu.tecsup.marcador.api.ApiFlowTest   : Started ApiFlowTest in 20.994 seconds (process running for 21.886)
+2026-11-05T02:06:52.578Z  INFO [api-local] 2523 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-05T02:06:52.605Z  INFO [api-local] 2523 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@276511ca
+2026-11-05T02:06:52.608Z  INFO [api-local] 2523 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-05T02:06:52.625Z  INFO [api-local] 2523 --- [marcador-api] [           main] p.e.t.marcador.api.config.AdminSeeder    : Administrador creado: admin@marcador.pe
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-05T02:06:54.490Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:32771]
+2026-11-05T02:06:54.527Z  INFO [api-local] 2523 --- [marcador-api] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4542af89:0/SimpleConnection@15800a35 [delegate=amqp://guest@127.0.0.1:32771/, localPort=37300]
+2026-11-05T02:06:54.565Z  INFO [api-local] 2523 --- [marcador-api] [           main] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=1, reason=MATCH_FINISHED, requestedAt=1793844414485]
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.62 s -- in pe.edu.tecsup.marcador.api.ApiFlowTest
+[INFO] Running pe.edu.tecsup.marcador.api.insights.InsightEngineTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in pe.edu.tecsup.marcador.api.insights.InsightEngineTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ api ---
+[INFO] Building jar: /home/runner/work/lab12-nube/lab12-nube/app/backend/api/target/app.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ api ---
+[INFO] Replacing main artifact /home/runner/work/lab12-nube/lab12-nube/app/backend/api/target/app.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/runner/work/lab12-nube/lab12-nube/app/backend/api/target/app.jar.original
+[INFO] 
+[INFO] -------------------< pe.edu.tecsup.marcador:worker >--------------------
+[INFO] Building worker 1.0.0                                              [4/4]
+[INFO]   from worker/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ worker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ worker ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ worker ---
+[INFO] skip non existing resourceDirectory /home/runner/work/lab12-nube/lab12-nube/app/backend/worker/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ worker ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ worker ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running pe.edu.tecsup.marcador.worker.ScoringWorkerTest
+02:06:56.819 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+02:06:56.825 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+02:06:56.856 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.21.4
+02:06:57.043 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+02:06:57.252 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+02:06:57.253 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+02:06:57.271 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.2
+  API Version: 1.54
+  Operating System: Ubuntu 26.04.1 LTS
+  Total Memory: 15983 MB
+02:06:57.496 [main] INFO tc.testcontainers/ryuk:0.12.0 -- Creating container for image: testcontainers/ryuk:0.12.0
+02:06:57.622 [main] INFO tc.testcontainers/ryuk:0.12.0 -- Container testcontainers/ryuk:0.12.0 is starting: 219b72d0ac0c3ada4dff317775a5a1e4e2f9a437ab0ff9b4ea500e7fb0c35d53
+02:06:57.882 [main] INFO tc.testcontainers/ryuk:0.12.0 -- Container testcontainers/ryuk:0.12.0 started in PT0.386832778S
+02:06:57.887 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+02:06:57.887 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+02:06:57.888 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+02:06:57.888 [main] INFO tc.rabbitmq:3.13-management-alpine -- Creating container for image: rabbitmq:3.13-management-alpine
+02:06:57.932 [main] INFO tc.rabbitmq:3.13-management-alpine -- Container rabbitmq:3.13-management-alpine is starting: d499f0cca36d2ff1c6011b61838176fcfeb0b8a90a0a018d295caf1d235731e8
+02:07:03.862 [main] INFO tc.rabbitmq:3.13-management-alpine -- Container rabbitmq:3.13-management-alpine started in PT5.973613287S
+02:07:03.863 [main] INFO tc.redis:7-alpine -- Creating container for image: redis:7-alpine
+02:07:03.906 [main] INFO tc.redis:7-alpine -- Container redis:7-alpine is starting: 5d3a88a8af8b5e7beb2d221758f5eb18e2f7815a9b5067f6d322c62cefb431db
+02:07:04.154 [main] INFO tc.redis:7-alpine -- Container redis:7-alpine started in PT0.291126134S
+02:07:04.155 [main] INFO tc.postgres:16-alpine -- Creating container for image: postgres:16-alpine
+02:07:04.199 [main] INFO tc.postgres:16-alpine -- Container postgres:16-alpine is starting: a6e0e754090e326a1bc63f2894f920fe84e141240a94f23ef1e9d53071007869
+02:07:05.642 [main] INFO tc.postgres:16-alpine -- Container postgres:16-alpine started in PT1.487668888S
+02:07:05.643 [main] INFO tc.postgres:16-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:32781/test?loggerLevel=OFF)
+02:07:05.706 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.tecsup.marcador.worker.ScoringWorkerTest]: ScoringWorkerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:07:05.866 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.tecsup.marcador.worker.WorkerApplication for test class pe.edu.tecsup.marcador.worker.ScoringWorkerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-11-05T02:07:06.241Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] p.e.t.marcador.worker.ScoringWorkerTest  : Starting ScoringWorkerTest using Java 21.0.13 with PID 3573 (started by runner in /home/runner/work/lab12-nube/lab12-nube/app/backend/worker)
+2026-11-05T02:07:06.243Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] p.e.t.marcador.worker.ScoringWorkerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-11-05T02:07:07.070Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-05T02:07:07.072Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-05T02:07:07.094Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-11-05T02:07:07.845Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:32781/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-11-05T02:07:07.884Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-11-05T02:07:07.887Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.017s)
+2026-11-05T02:07:07.903Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-11-05T02:07:07.998Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-11-05T02:07:08.018Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - esquema"
+2026-11-05T02:07:08.089Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - partidos demo"
+2026-11-05T02:07:08.102Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.059s)
+2026-11-05T02:07:09.356Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-05T02:07:09.433Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:32777]
+2026-11-05T02:07:09.469Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#63e40188:0/SimpleConnection@1a899fcd [delegate=amqp://guest@127.0.0.1:32777/, localPort=53160]
+2026-11-05T02:07:09.539Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] p.e.t.marcador.worker.ScoringWorkerTest  : Started ScoringWorkerTest in 3.558 seconds (process running for 13.353)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-11-05T02:07:10.136Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-05T02:07:10.156Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@24bc52ce
+2026-11-05T02:07:10.160Z  INFO [worker-local] 3573 --- [marcador-worker] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-05T02:07:10.228Z  INFO [worker-local] 3573 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=1, reason=MATCH_FINISHED, requestedAt=1793844430200]
+2026-11-05T02:07:10.259Z  INFO [worker-local] 3573 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 2 usuarios, 3 partidos en 21 ms
+2026-11-05T02:07:10.887Z  INFO [worker-local] 3573 --- [marcador-worker] [xecutorLoop-1-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/127.0.0.1:32780
+2026-11-05T02:07:10.893Z  WARN [worker-local] 3573 --- [marcador-worker] [ioEventLoop-4-2] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:32780]: Connection refused (connect failed): localhost/127.0.0.1:32780
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.46 s -- in pe.edu.tecsup.marcador.worker.ScoringWorkerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ worker ---
+[INFO] Building jar: /home/runner/work/lab12-nube/lab12-nube/app/backend/worker/target/app.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ worker ---
+[INFO] Replacing main artifact /home/runner/work/lab12-nube/lab12-nube/app/backend/worker/target/app.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/runner/work/lab12-nube/lab12-nube/app/backend/worker/target/app.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for marcador26 1.0.0:
+[INFO] 
+[INFO] marcador26 ......................................... SUCCESS [  0.002 s]
+[INFO] scoring-core ....................................... SUCCESS [  3.005 s]
+[INFO] api ................................................ SUCCESS [ 27.080 s]
+[INFO] worker ............................................. SUCCESS [ 15.635 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  46.022 s
+[INFO] Finished at: 2026-11-05T02:07:11Z
+[INFO] ------------------------------------------------------------------------
