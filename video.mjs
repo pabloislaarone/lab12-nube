@@ -10,6 +10,7 @@ fs.mkdirSync(`${OUT}/raw`, { recursive: true });
 fs.mkdirSync(`${OUT}/stills`, { recursive: true });
 
 const browser = await chromium.launch();
+const ONLY_WORKER = process.argv.includes('--only-worker');
 
 const CAP = `window.__cap = (t) => {
   let d = document.getElementById('__cap');
@@ -46,6 +47,7 @@ async function smoothScroll(p, y) {
   await wait(p, 900);
 }
 
+if (!ONLY_WORKER) {
 // ---------------- Escena 1: participante pronostica ----------------
 {
   const r = await rec('app1');
@@ -90,6 +92,7 @@ async function smoothScroll(p, y) {
 
 // ---------------- Escena 2: crear sala ----------------
 let roomCode = null;
+let roomPath = '/ranking';
 {
   const r = await rec('app2', CODE.token1);
   const p = r.page;
@@ -104,6 +107,7 @@ let roomCode = null;
   await p.waitForURL(/\/salas\/\d+/);
   await wait(p, 900);
   roomCode = (await p.locator('.invite-code').textContent()).trim();
+  roomPath = new URL(p.url()).pathname;
   await cap(p, `Se genera un código único de invitación (${roomCode}) y un enlace para compartir`);
   await wait(p, 4000);
   await done(r);
@@ -147,7 +151,8 @@ let roomCode = null;
 // ---------------- Escena 5: resultado → recálculo → ranking en vivo ----------------
 {
   const live = await rec('live-ranking', CODE.token1);
-  await go(live.page, '/ranking');
+  const t0 = Date.now();
+  await go(live.page, roomPath, 'Sesión de Lucía: ranking de su sala abierto mientras el admin registra un resultado');
   await wait(live.page, 1500);
 
   const a = await rec('live-admin', CODE.tokenAdmin);
@@ -157,15 +162,17 @@ let roomCode = null;
   const row = p.locator('.admin-row').first();
   await row.locator('.goal-input').nth(0).fill('2'); await wait(p, 400);
   await row.locator('.goal-input').nth(1).fill('1'); await wait(p, 600);
+  const clickAt = Date.now();
   await row.locator('button:has-text("Registrar")').click();
   await wait(p, 600);
   await cap(p, 'La API solo guarda el marcador y publica un evento en RabbitMQ: un worker recalcula');
   await wait(p, 3500);
   await done(a);
 
-  await cap(live.page, 'En otra sesión, el ranking se actualiza solo (Server-Sent Events), sin recargar');
-  await live.page.waitForSelector('[data-sonner-toast]', { timeout: 20000 }).catch(() => {});
+  await live.page.waitForSelector('[data-sonner-toast]', { timeout: 15000 }).catch(() => {});
+  await cap(live.page, 'El ranking de la sala se actualizó solo (Server-Sent Events), sin recargar la página');
   await wait(live.page, 4500);
+  fs.writeFileSync(`${OUT}/offsets.json`, JSON.stringify({ live: Math.max(0, (clickAt - t0) / 1000 - 0.3) }));
   await done(live);
 }
 
@@ -198,6 +205,8 @@ let roomCode = null;
   await done(r);
 }
 
+}
+
 // ---------------- Imágenes fijas (portada, terminales, gráficos, cierre) ----------------
 async function still(name, html) {
   const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
@@ -225,6 +234,7 @@ const term = (file, title, caption) => {
 };
 const img = (path) => `data:image/png;base64,${fs.readFileSync(path).toString('base64')}`;
 
+if (!ONLY_WORKER) {
 await still('00-portada', `<div class="card"><div class="eyebrow">Laboratorio 12 · Desarrollo en la Nube · TECSUP</div>
   <h1>Marcador 26</h1><h2>Pronósticos del Mundial 2026 con Docker, balanceo de carga y escalamiento horizontal</h2>
   <p>Spring Boot · React · PostgreSQL · Redis · RabbitMQ · Nginx · k6</p><p style="margin-top:28px;color:#ecf3ee">Pablo Isla</p></div>`);
@@ -234,8 +244,7 @@ await still('20-balanceo', term('balanceo.txt', 'Balanceo de carga con Nginx (le
   '30 peticiones repartidas 10 / 10 / 10 entre las 3 réplicas de la API'));
 await still('21-escalar', term('escalar5.txt', 'Escalamiento horizontal en caliente',
   'Se escala a 5 réplicas sin reiniciar: Nginx las detecta y reparte 10 a cada una'));
-await still('22-worker', term('worker.txt', 'Escalamiento del worker',
-  'Cada evento lo procesa una réplica distinta del worker (competing consumers)'));
+
 await still('30-estres1', `<div class="card" style="align-items:center;text-align:center"><div class="eyebrow">Prueba de estrés con k6 · escenario realista</div>
   <img src="${img(CODE.chart1)}"/></div><div class="cap">300 usuarios simultáneos: con 3 réplicas la latencia baja a la mitad, 0 % de errores</div>`);
 await still('31-estres2', `<div class="card" style="align-items:center;text-align:center"><div class="eyebrow">Prueba de estrés con k6 · saturación</div>
@@ -246,5 +255,12 @@ await still('99-cierre', `<div class="card"><div class="eyebrow">Resumen</div><h
   <p>✔ Docker Compose, balanceo con Nginx y escalamiento horizontal</p>
   <p>✔ 51 pruebas automáticas y pruebas de estrés 1 vs 3 réplicas</p>
   <p style="margin-top:24px;color:#ecf3ee">github.com/pabloislaarone/lab12-nube</p></div>`);
+
+}
+
+if (ONLY_WORKER) {
+  await still('22-worker', term('worker.txt', 'Escalamiento del worker',
+    'Los eventos se reparten entre las 2 réplicas del worker (competing consumers)'));
+}
 
 await browser.close();

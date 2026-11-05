@@ -43,6 +43,13 @@ jobs:
         run: |
           cd ev && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
           node video.mjs ../out
+      - name: Log del worker al final
+        working-directory: app
+        run: |
+          curl -s -X POST localhost:8080/api/admin/recompute -H "Authorization: Bearer $(python3 -c "import json;print(json.load(open('../out/prep.json'))['tokenAdmin'])")" >/dev/null; sleep 5
+          { echo '$ docker compose logs worker | grep recalculados'; docker compose logs worker --no-color | grep -E "recalculados" | sed -E 's/^(worker-[0-9]).*Puntajes/\1 | Puntajes/'; } > ../out/worker.txt
+          cat ../out/worker.txt
+          cd ../ev && node video.mjs ../out --only-worker
       - name: Montar el video
         run: |
           which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
@@ -50,7 +57,7 @@ jobs:
           ENC="-c:v libx264 -preset veryfast -crf 22 -pix_fmt yuv420p -r 30 -an"
           still() { D=$2; FO=$(awk "BEGIN{print $D-0.4}")
             ffmpeg -y -loglevel error -framerate 30 -i "stills/$1.png" -vf "format=yuv420p,loop=-1:1,trim=duration=$D,fade=t=in:st=0:d=0.4,fade=t=out:st=$FO:d=0.4" $ENC mp4/tmp.mp4 && mv mp4/tmp.mp4 "mp4/$1.mp4" && echo "file 'mp4/$1.mp4'" >> list.txt; }
-          clip() { PRE="-ss 0.6"; [ -n "$2" ] && PRE="-sseof -$2"
+          clip() { PRE="-ss 0.6"; [ -n "$2" ] && PRE="$2"
             ffmpeg -y -loglevel error $PRE -i "raw/$1.webm" -vf "fps=30,scale=1280:720,format=yuv420p,fade=t=in:st=0:d=0.3" $ENC mp4/tmp.mp4 && mv mp4/tmp.mp4 "mp4/$1.mp4" && echo "file 'mp4/$1.mp4'" >> list.txt; }
           still 00-portada 5
           still 01-compose 7
@@ -59,9 +66,9 @@ jobs:
           clip app3
           clip app4
           clip live-admin
-          clip live-ranking 9
+          clip live-ranking "-ss $(python3 -c "import json;print(json.load(open('offsets.json'))['live'])")"
           clip bitacora
-          clip rabbit 8
+          clip rabbit "-sseof -8"
           still 20-balanceo 7
           still 21-escalar 7
           still 22-worker 6
