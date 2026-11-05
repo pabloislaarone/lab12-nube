@@ -1,0 +1,64 @@
+worker-1  | 
+worker-1  |   .   ____          _            __ _ _
+worker-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+worker-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+worker-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+worker-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+worker-1  |  =========|_|==============|___/=/_/_/_/
+worker-1  | 
+worker-1  |  :: Spring Boot ::                (v3.5.6)
+worker-1  | 
+worker-1  | 2026-11-05T00:43:03.254Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Starting WorkerApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+worker-1  | 2026-11-05T00:43:03.257Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : No active profile set, falling back to 1 default profile: "default"
+worker-1  | 2026-11-05T00:43:07.458Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+worker-1  | 2026-11-05T00:43:07.460Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+worker-1  | 2026-11-05T00:43:07.567Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+worker-1  | 2026-11-05T00:43:09.955Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+worker-1  | 2026-11-05T00:43:10.050Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+worker-1  | 2026-11-05T00:43:10.050Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+worker-1  | 2026-11-05T00:43:10.451Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+worker-1  | 2026-11-05T00:43:10.452Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6991 ms
+worker-1  | 2026-11-05T00:43:16.456Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+worker-1  | 2026-11-05T00:43:16.855Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+worker-1  | 2026-11-05T00:43:16.858Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+worker-1  | 2026-11-05T00:43:17.053Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#53df7e67:0/SimpleConnection@68f75a35 [delegate=amqp://marcador@172.18.0.4:5672/, localPort=35022]
+worker-1  | 2026-11-05T00:43:17.259Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Started WorkerApplication in 15.908 seconds (process running for 17.704)
+worker-1  | 2026-11-05T00:43:20.451Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+worker-1  | 2026-11-05T00:43:20.451Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+worker-1  | 2026-11-05T00:43:20.452Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+worker-1  | 2026-11-05T00:43:20.652Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+worker-1  | 2026-11-05T00:43:21.254Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f1711d
+worker-1  | 2026-11-05T00:43:21.256Z  INFO [4bc142edfe1c] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+worker-2  | 
+worker-2  |   .   ____          _            __ _ _
+worker-2  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+worker-2  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+worker-2  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+worker-2  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+worker-2  |  =========|_|==============|___/=/_/_/_/
+worker-2  | 
+worker-2  |  :: Spring Boot ::                (v3.5.6)
+worker-2  | 
+worker-2  | 2026-11-05T00:43:03.184Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Starting WorkerApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+worker-2  | 2026-11-05T00:43:03.186Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : No active profile set, falling back to 1 default profile: "default"
+worker-2  | 2026-11-05T00:43:07.488Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+worker-2  | 2026-11-05T00:43:07.491Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+worker-2  | 2026-11-05T00:43:07.592Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+worker-2  | 2026-11-05T00:43:09.987Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+worker-2  | 2026-11-05T00:43:10.000Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+worker-2  | 2026-11-05T00:43:10.000Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+worker-2  | 2026-11-05T00:43:10.392Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+worker-2  | 2026-11-05T00:43:10.393Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6995 ms
+worker-2  | 2026-11-05T00:43:16.089Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+worker-2  | 2026-11-05T00:43:16.494Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+worker-2  | 2026-11-05T00:43:16.575Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+worker-2  | 2026-11-05T00:43:16.689Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#53df7e67:0/SimpleConnection@68f75a35 [delegate=amqp://marcador@172.18.0.4:5672/, localPort=56382]
+worker-2  | 2026-11-05T00:43:16.985Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [           main] p.e.t.marcador.worker.WorkerApplication  : Started WorkerApplication in 15.701 seconds (process running for 17.562)
+worker-2  | 2026-11-05T00:43:20.283Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+worker-2  | 2026-11-05T00:43:20.284Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+worker-2  | 2026-11-05T00:43:20.285Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+worker-2  | 2026-11-05T00:43:20.484Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+worker-2  | 2026-11-05T00:43:21.082Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f1711d
+worker-2  | 2026-11-05T00:43:21.086Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+worker-2  | 2026-11-05T00:43:27.477Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Evento recibido: ScoringEvent[matchId=null, reason=MANUAL, requestedAt=1793839407183]
+worker-2  | 2026-11-05T00:43:27.583Z  INFO [7833c3e5d2a3] 1 --- [marcador-worker] [ntContainer#0-1] p.e.t.marcador.worker.ScoringListener    : Puntajes recalculados: 0 usuarios, 0 partidos en 97 ms

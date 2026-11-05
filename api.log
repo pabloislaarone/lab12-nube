@@ -1,0 +1,128 @@
+api-3  | 
+api-3  |   .   ____          _            __ _ _
+api-3  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-3  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-3  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-3  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-3  |  =========|_|==============|___/=/_/_/_/
+api-3  | 
+api-3  |  :: Spring Boot ::                (v3.5.6)
+api-3  | 
+api-3  | 2026-11-05T00:42:45.579Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-3  | 2026-11-05T00:42:45.582Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-3  | 2026-11-05T00:42:48.700Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+api-3  | 2026-11-05T00:42:48.703Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-3  | 2026-11-05T00:42:48.781Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+api-3  | 2026-11-05T00:42:50.347Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-3  | 2026-11-05T00:42:50.362Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-3  | 2026-11-05T00:42:50.362Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-3  | 2026-11-05T00:42:50.552Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-3  | 2026-11-05T00:42:50.554Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4850 ms
+api-3  | 2026-11-05T00:42:51.995Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-3  | 2026-11-05T00:42:52.484Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11170228
+api-3  | 2026-11-05T00:42:52.488Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-3  | 2026-11-05T00:42:52.605Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-3  | 2026-11-05T00:42:52.961Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.184s)
+api-3  | 2026-11-05T00:42:52.987Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+api-3  | 2026-11-05T00:42:52.990Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-3  | 2026-11-05T00:42:55.578Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-3  | 2026-11-05T00:42:56.992Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-3  | 2026-11-05T00:42:57.961Z  INFO [940583a704a0] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 13.58 seconds (process running for 14.821)
+api-3  | 2026-11-05T00:42:58.562Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-3  | 2026-11-05T00:42:58.563Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-3  | 2026-11-05T00:42:58.565Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-3  | 2026-11-05T00:43:27.245Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+api-1  | 
+api-1  |   .   ____          _            __ _ _
+api-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-1  |  =========|_|==============|___/=/_/_/_/
+api-1  | 
+api-1  |  :: Spring Boot ::                (v3.5.6)
+api-1  | 
+api-1  | 2026-11-05T00:42:45.185Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-1  | 2026-11-05T00:42:45.187Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-1  | 2026-11-05T00:42:48.162Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+api-1  | 2026-11-05T00:42:48.166Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-1  | 2026-11-05T00:42:48.216Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+api-1  | 2026-11-05T00:42:49.870Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-1  | 2026-11-05T00:42:49.886Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-1  | 2026-11-05T00:42:49.887Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-1  | 2026-11-05T00:42:50.076Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-1  | 2026-11-05T00:42:50.078Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4783 ms
+api-1  | 2026-11-05T00:42:51.408Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-1  | 2026-11-05T00:42:51.890Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@49925d21
+api-1  | 2026-11-05T00:42:51.895Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-1  | 2026-11-05T00:42:51.990Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-1  | 2026-11-05T00:42:52.081Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+api-1  | 2026-11-05T00:42:52.086Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.032s)
+api-1  | 2026-11-05T00:42:53.119Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+api-1  | 2026-11-05T00:42:53.121Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+api-1  | 2026-11-05T00:42:55.501Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-2  | 
+api-2  |   .   ____          _            __ _ _
+api-2  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-2  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-2  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-2  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-2  |  =========|_|==============|___/=/_/_/_/
+api-2  | 
+api-2  |  :: Spring Boot ::                (v3.5.6)
+api-2  | 
+api-2  | 2026-11-05T00:42:45.234Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Starting ApiApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by app in /app)
+api-2  | 2026-11-05T00:42:45.236Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : No active profile set, falling back to 1 default profile: "default"
+api-2  | 2026-11-05T00:42:48.133Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+api-2  | 2026-11-05T00:42:48.140Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+api-2  | 2026-11-05T00:42:48.231Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 Redis repository interfaces.
+api-2  | 2026-11-05T00:42:49.736Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-2  | 2026-11-05T00:42:49.750Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-2  | 2026-11-05T00:42:49.750Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+api-2  | 2026-11-05T00:42:49.961Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-2  | 2026-11-05T00:42:49.962Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4612 ms
+api-2  | 2026-11-05T00:42:51.329Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-2  | 2026-11-05T00:42:51.800Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11170228
+api-2  | 2026-11-05T00:42:51.802Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-2  | 2026-11-05T00:42:51.867Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/marcador (PostgreSQL 16.15)
+api-2  | 2026-11-05T00:42:51.968Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+api-2  | 2026-11-05T00:42:52.028Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.093s)
+api-2  | 2026-11-05T00:42:52.043Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+api-2  | 2026-11-05T00:42:52.269Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+api-2  | 2026-11-05T00:42:52.348Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - esquema"
+api-2  | 2026-11-05T00:42:52.852Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - partidos demo"
+api-2  | 2026-11-05T00:42:52.923Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.467s)
+api-2  | 2026-11-05T00:42:55.490Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+api-2  | 2026-11-05T00:42:56.835Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-2  | 2026-11-05T00:42:57.760Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 13.689 seconds (process running for 14.833)
+api-2  | 2026-11-05T00:42:58.329Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-2  | 2026-11-05T00:42:58.329Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-2  | 2026-11-05T00:42:58.330Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+api-2  | 2026-11-05T00:43:23.997Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [omcat-handler-3] o.apache.coyote.http11.Http11Processor   : The host [api_backend] is not valid
+api-2  |  Note: further occurrences of request parsing errors will be logged at DEBUG level.
+api-2  | 
+api-2  | java.lang.IllegalArgumentException: The character [_] is never valid in a domain name.
+api-2  | 	at org.apache.tomcat.util.http.parser.HttpParser$DomainParseState.next(HttpParser.java:1045) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.tomcat.util.http.parser.HttpParser.readHostDomainName(HttpParser.java:931) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:67) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:43) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.coyote.AbstractProcessor.parseHost(AbstractProcessor.java:298) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.coyote.http11.Http11Processor.prepareRequest(Http11Processor.java:787) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:375) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-2  | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar!/:na]
+api-1  | 2026-11-05T00:42:56.759Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-1  | 2026-11-05T00:42:57.654Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] p.e.tecsup.marcador.api.ApiApplication   : Started ApiApplication in 13.701 seconds (process running for 14.864)
+api-1  | 2026-11-05T00:42:58.087Z  INFO [8e66f0182768] 1 --- [marcador-api] [           main] p.e.t.marcador.api.config.AdminSeeder    : Administrador creado: admin@marcador.pe
+api-1  | 2026-11-05T00:42:58.196Z  INFO [8e66f0182768] 1 --- [marcador-api] [omcat-handler-0] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-1  | 2026-11-05T00:42:58.197Z  INFO [8e66f0182768] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-1  | 2026-11-05T00:42:58.199Z  INFO [8e66f0182768] 1 --- [marcador-api] [omcat-handler-0] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-1  | 2026-11-05T00:43:27.694Z  INFO [8e66f0182768] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 1 clientes
+api-3  | 2026-11-05T00:43:27.344Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-3] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7b9d1a4:0/SimpleConnection@42f37213 [delegate=amqp://marcador@172.18.0.4:5672/, localPort=44270]
+api-3  | 2026-11-05T00:43:27.372Z  INFO [940583a704a0] 1 --- [marcador-api] [omcat-handler-3] p.e.t.m.api.admin.ScoringPublisher       : Evento de puntuación publicado: ScoringEvent[matchId=null, reason=MANUAL, requestedAt=1793839407183]
+api-3  | 2026-11-05T00:43:27.692Z  INFO [940583a704a0] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes
+api-2  | 	at java.base/java.lang.VirtualThread.run(Unknown Source) ~[na:na]
+api-2  | 
+api-2  | 2026-11-05T00:43:27.691Z  INFO [9a9a2f7a0c3c] 1 --- [marcador-api] [enerContainer-1] p.e.t.m.api.realtime.RankingStream       : Ranking actualizado, notificando a 0 clientes

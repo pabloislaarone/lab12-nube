@@ -1,0 +1,8 @@
+event:hello
+data:{"instance":"8e66f0182768"}
+
+event:ranking
+data:{"matchId":null,"reason":"MANUAL"}
+
+:ping
+
