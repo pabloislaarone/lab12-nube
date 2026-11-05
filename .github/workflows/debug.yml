@@ -1,0 +1,33 @@
+name: Debug SSE
+on:
+  push:
+    branches: [debug-sse]
+permissions:
+  contents: write
+jobs:
+  sse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main, path: app }
+      - name: Probar SSE
+        working-directory: app
+        run: |
+          docker compose up -d --build --wait
+          mkdir -p ../out
+          TOKEN=$(curl -s -X POST localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{"email":"admin@marcador.pe","password":"admin123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
+          (curl -sN -i --max-time 25 localhost:8080/api/stream > ../out/sse-gateway.txt 2>&1 &)
+          API=$(docker compose ps -q api | head -1)
+          (docker exec $API wget -qO- -T 25 http://localhost:8080/api/stream > ../out/sse-direct.txt 2>&1 &)
+          sleep 3
+          curl -s -X POST localhost:8080/api/admin/recompute -H "Authorization: Bearer $TOKEN" > ../out/recompute.txt
+          sleep 22
+          docker compose logs worker --no-color > ../out/worker.log 2>&1
+          docker compose logs api --no-color > ../out/api.log 2>&1
+          docker compose exec -T redis redis-cli PUBSUB CHANNELS '*' > ../out/pubsub.txt 2>&1
+          docker compose exec -T redis redis-cli PUBSUB NUMSUB marcador:ranking-updated >> ../out/pubsub.txt 2>&1
+      - name: Publicar
+        if: always()
+        run: |
+          cd out && git init -q && git checkout -q -b r && git add . && git -c user.name=ci -c user.email=ci@local commit -qm dbg
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:refs/heads/debug-sse-out
