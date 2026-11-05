@@ -101,3 +101,21 @@ Los eventos de RabbitMQ también se repartieron entre las **dos réplicas del wo
 - **Conclusión:** el escalamiento horizontal funciona porque la API no tiene estado. El siguiente cuello de botella sería la base de datos compartida, que se podría escalar con réplicas de lectura.
 
 Los resultados completos están en `docs/resultados/`.
+
+## 5. Segunda corrida de estrés (código final)
+
+Resultados completos en `resultados/corrida-2/`. Capturas de la salida de k6 en `evidencias/k6-*.png`.
+
+| Métrica | Realista · 1 réplica | Realista · 3 réplicas | Saturación · 1 réplica | Saturación · 3 réplicas |
+|---|---|---|---|---|
+| Peticiones atendidas | 49 481 | 49 560 | 162 989 | 170 777 |
+| Latencia p95 | 5,7 ms | 3,2 ms | 2 020 ms | 1 052 ms |
+| Latencia p99 | 10,1 ms | 4,7 ms | 3 480 ms | 2 076 ms |
+| Iteraciones descartadas | 0 | 0 | 13 298 | 5 510 |
+| Errores | 0 % | 0 % | 0 % | 0 % |
+
+En esta corrida, la saturación llevó al límite incluso a las 3 réplicas, porque el servidor de CI (4 CPU) comparte el procesador con la base de datos y con k6. Aun así, con 3 réplicas:
+
+- se descartaron un 59 % menos de peticiones;
+- la p95 bajó a la mitad;
+- no hubo errores.

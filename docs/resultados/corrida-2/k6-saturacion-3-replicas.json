@@ -1,0 +1,17 @@
+{
+  "replicas": "3",
+  "perfil": "saturacion",
+  "peticiones": 170777,
+  "rps": 922.025267125966,
+  "lat_avg_ms": 191.61045924328076,
+  "lat_med_ms": 3.594413,
+  "lat_p90_ms": 608.401945,
+  "lat_p95_ms": 1051.9573453999994,
+  "lat_p99_ms": 2076.293421399995,
+  "lat_max_ms": 8212.3894,
+  "errores_pct": 0,
+  "checks_ok_pct": 100,
+  "vus_max": 1500,
+  "predicciones": 34463,
+  "iteraciones_descartadas": 5510
+}
