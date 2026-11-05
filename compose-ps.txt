@@ -1,0 +1,11 @@
+$ docker compose ps
+NAME                    IMAGE                             STATUS
+marcador26-api-1        marcador-api:latest               Up About a minute (healthy)
+marcador26-api-2        marcador-api:latest               Up About a minute (healthy)
+marcador26-api-3        marcador-api:latest               Up About a minute (healthy)
+marcador26-gateway-1    marcador-gateway:latest           Up 43 seconds
+marcador26-postgres-1   postgres:16-alpine                Up About a minute (healthy)
+marcador26-rabbitmq-1   rabbitmq:3.13-management-alpine   Up About a minute (healthy)
+marcador26-redis-1      redis:7-alpine                    Up About a minute (healthy)
+marcador26-worker-1     marcador-worker:latest            Up 43 seconds (healthy)
+marcador26-worker-2     marcador-worker:latest            Up 43 seconds (healthy)

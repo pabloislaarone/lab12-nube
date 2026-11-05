@@ -1,0 +1,13 @@
+$ docker compose up -d --scale api=5 --wait
+ Container marcador26-api-4 Healthy 
+ Container marcador26-api-5 Healthy 
+ Container marcador26-api-3 Healthy 
+ Container marcador26-api-2 Healthy 
+ Container marcador26-api-1 Healthy 
+
+$ ./scripts/balanceo.sh 50
+Réplica 7599e05ada4a   atendió 10 peticiones
+Réplica 80236525459f   atendió 10 peticiones
+Réplica 92072cc01c22   atendió 10 peticiones
+Réplica a74c78560909   atendió 10 peticiones
+Réplica b054179a18ae   atendió 10 peticiones

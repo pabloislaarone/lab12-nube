@@ -1,0 +1,4 @@
+$ docker compose logs worker | grep recalculados
+worker-1 | Puntajes recalculados: 20 usuarios, 8 partidos en 301 ms
+worker-1 | Puntajes recalculados: 20 usuarios, 9 partidos en 27 ms
+worker-2 | Puntajes recalculados: 20 usuarios, 9 partidos en 381 ms

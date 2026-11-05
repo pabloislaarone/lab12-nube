@@ -1,0 +1,9 @@
+$ ./scripts/balanceo.sh 30
+Réplica 7599e05ada4a   atendió 10 peticiones
+Réplica 80236525459f   atendió 10 peticiones
+Réplica a74c78560909   atendió 10 peticiones
+
+$ curl -I http://localhost:8080/api/info
+X-Instance-Id: 80236525459f
+X-Instance-Id: a74c78560909
+X-Instance-Id: 7599e05ada4a
