@@ -39,8 +39,10 @@ process.on('unhandledRejection', async (e) => { console.error('ERROR', e); proce
 const cap = (p, t) => p.evaluate((t) => window.__cap && window.__cap(t), t);
 const wait = (p, ms) => p.waitForTimeout(ms);
 async function go(p, path, caption) {
-  await p.goto(B + path, { waitUntil: 'networkidle' });
-  await wait(p, 400);
+  // No se usa "networkidle": la conexión SSE del tiempo real queda abierta a propósito
+  await p.goto(B + path, { waitUntil: 'load' });
+  await p.waitForSelector('main, .auth, .card', { timeout: 15000 }).catch(() => {});
+  await wait(p, 1300);
   if (caption) await cap(p, caption);
 }
 async function smoothScroll(p, y) {
