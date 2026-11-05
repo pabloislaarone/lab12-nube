@@ -59,6 +59,15 @@ jobs:
         run: docker compose ps
       - name: Evidencia de balanceo
         run: ./scripts/balanceo.sh 30 | tee balanceo.log
+      - name: Tiempo real (SSE) a través del balanceador
+        run: |
+          TOKEN=$(curl -s -X POST localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{"email":"admin@marcador.pe","password":"admin123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
+          (curl -sN --max-time 15 localhost:8080/api/stream > sse.txt &)
+          sleep 3
+          curl -s -X POST localhost:8080/api/admin/recompute -H "Authorization: Bearer $TOKEN" > /dev/null
+          sleep 12
+          cat sse.txt
+          grep -q "event:ranking" sse.txt
       - name: Prueba de estrés 1 vs 3 réplicas
         run: ./scripts/stress-compare.sh 2>&1 | tee stress.log
       - name: Bitácora del worker
