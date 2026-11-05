@@ -5,7 +5,7 @@ on:
 permissions:
   contents: write
 jobs:
-  evidencias:
+  video:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,26 +15,64 @@ jobs:
       - name: Levantar sistema
         working-directory: app
         run: docker compose up -d --build --wait
-      - name: Datos demo y evidencias de texto
+      - name: Preparar datos y evidencias de texto
         working-directory: app
         run: |
           mkdir -p ../out
-          TOKEN=$(curl -s -X POST localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{"email":"admin@marcador.pe","password":"admin123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
-          curl -s -X POST localhost:8080/api/admin/demo -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"users":20}' > ../out/demo.json
+          login() { curl -s -X POST localhost:8080/api/auth/login -H 'Content-Type: application/json' -d "{\"email\":\"$1\",\"password\":\"$2\"}" | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])"; }
+          ADMIN=$(login admin@marcador.pe admin123)
+          curl -s -X POST localhost:8080/api/admin/demo -H "Authorization: Bearer $ADMIN" -H 'Content-Type: application/json' -d '{"users":20}' > /dev/null
           sleep 6
-          curl -s -X POST localhost:8080/api/admin/recompute -H "Authorization: Bearer $TOKEN" > /dev/null; sleep 4
+          T1=$(login demo01@marcador.pe demo123); T2=$(login demo02@marcador.pe demo123)
+          # Un partido futuro que demo01 pronostica y luego el admin "adelanta" para registrar su resultado en el video
+          MID=$(curl -s localhost:8080/api/matches -H "Authorization: Bearer $T1" | python3 -c "import sys,json;m=[x for x in json.load(sys.stdin) if not x['locked']];print(m[-1]['id'])")
+          curl -s -X PUT localhost:8080/api/matches/$MID/prediction -H "Authorization: Bearer $T1" -H 'Content-Type: application/json' -d '{"homeGoals":2,"awayGoals":1}' > /dev/null
+          curl -s localhost:8080/api/matches/$MID | python3 -c "
+          import sys,json,datetime
+          m=json.load(sys.stdin)
+          k=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(minutes=30)).isoformat().replace('+00:00','Z')
+          print(json.dumps({x:m[x] for x in ['stage','homeTeam','awayTeam','homeCode','awayCode','venue']}|{'kickoffAt':k}))" > /tmp/m.json
+          curl -s -X PUT localhost:8080/api/admin/matches/$MID -H "Authorization: Bearer $ADMIN" -H 'Content-Type: application/json' -d @/tmp/m.json > /dev/null
+          python3 -c "import json;json.dump({'token1':'$T1','token2':'$T2','tokenAdmin':'$ADMIN','chart1':'$PWD/docs/img/estres-realista.png','chart2':'$PWD/docs/img/estres-saturacion.png'},open('../out/prep.json','w'))"
           { echo '$ docker compose ps'; docker compose ps --format 'table {{.Name}}\t{{.Image}}\t{{.Status}}'; } > ../out/compose-ps.txt
-          { echo '$ ./scripts/balanceo.sh 30'; ./scripts/balanceo.sh 30; echo; echo '$ curl -I http://localhost:8080/api/info  (3 veces)'; for i in 1 2 3; do curl -s -D - -o /dev/null localhost:8080/api/info | grep -iE 'x-instance-id|x-upstream'; done; } > ../out/balanceo.txt
-          { echo '$ docker compose up -d --scale api=5 --wait'; docker compose up -d --scale api=5 --no-recreate --wait api 2>&1 | tail -3; sleep 8; echo; echo '$ ./scripts/balanceo.sh 50'; ./scripts/balanceo.sh 50; docker compose up -d --scale api=3 --wait api >/dev/null 2>&1; } > ../out/escalar5.txt
+          { echo '$ ./scripts/balanceo.sh 30'; ./scripts/balanceo.sh 30; echo; echo '$ curl -I http://localhost:8080/api/info'; for i in 1 2 3; do curl -s -D - -o /dev/null localhost:8080/api/info | grep -iE 'x-instance-id'; done; } > ../out/balanceo.txt
+          { echo '$ docker compose up -d --scale api=5 --wait'; docker compose up -d --scale api=5 --no-recreate --wait api 2>&1 | grep -E "api-[0-9]" | tail -5; sleep 8; echo; echo '$ ./scripts/balanceo.sh 50'; ./scripts/balanceo.sh 50; docker compose up -d --scale api=3 --wait api >/dev/null 2>&1; } > ../out/escalar5.txt
           { echo '$ docker compose logs worker | grep recalculados'; docker compose logs worker --no-color | grep -E "recalculados" | sed -E 's/^(worker-[0-9]).*Puntajes/\1 | Puntajes/'; } > ../out/worker.txt
-          { echo '$ docker stats --no-stream'; docker stats --no-stream --format 'table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}'; } > ../out/stats.txt
           cat ../out/*.txt
-      - name: Capturas
+      - name: Grabar escenas
         run: |
           cd ev && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
-          node shots.mjs ../out
+          node video.mjs ../out
+      - name: Montar el video
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          cd out && mkdir -p mp4 && : > list.txt
+          ENC="-c:v libx264 -preset veryfast -crf 22 -pix_fmt yuv420p -r 30 -an"
+          still() { D=$2; FO=$(awk "BEGIN{print $D-0.4}")
+            ffmpeg -y -loglevel error -framerate 30 -i "stills/$1.png" -vf "format=yuv420p,loop=-1:1,trim=duration=$D,fade=t=in:st=0:d=0.4,fade=t=out:st=$FO:d=0.4" $ENC mp4/tmp.mp4 && mv mp4/tmp.mp4 "mp4/$1.mp4" && echo "file 'mp4/$1.mp4'" >> list.txt; }
+          clip() { PRE="-ss 0.6"; [ -n "$2" ] && PRE="-sseof -$2"
+            ffmpeg -y -loglevel error $PRE -i "raw/$1.webm" -vf "fps=30,scale=1280:720,format=yuv420p,fade=t=in:st=0:d=0.3" $ENC mp4/tmp.mp4 && mv mp4/tmp.mp4 "mp4/$1.mp4" && echo "file 'mp4/$1.mp4'" >> list.txt; }
+          still 00-portada 5
+          still 01-compose 7
+          clip app1
+          clip app2
+          clip app3
+          clip app4
+          clip live-admin
+          clip live-ranking 9
+          clip bitacora
+          clip rabbit 8
+          still 20-balanceo 7
+          still 21-escalar 7
+          still 22-worker 6
+          still 30-estres1 7
+          still 31-estres2 7
+          still 99-cierre 6
+          ffmpeg -y -loglevel error -f concat -safe 0 -i list.txt -c copy video-marcador26.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 video-marcador26.mp4
+          for t in 3 10 25 45 65 85 105 125 150; do ffmpeg -y -loglevel error -ss $t -i video-marcador26.mp4 -frames:v 1 -q:v 4 frame-$t.jpg || true; done
       - name: Publicar
         if: always()
         run: |
-          cd out && git init -q && git checkout -q -b r && git add . && git -c user.name=ci -c user.email=ci@local commit -qm evidencias
+          cd out && rm -rf raw mp4 && git init -q && git checkout -q -b r && git add . && git -c user.name=ci -c user.email=ci@local commit -qm video
           git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:refs/heads/evidencias-out
