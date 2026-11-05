@@ -1,0 +1,25 @@
+name: Evidencia pruebas
+on:
+  push:
+    branches: [evidencias-tests]
+permissions:
+  contents: write
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main, path: app }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21", cache: maven }
+      - name: mvn verify
+        working-directory: app/backend
+        run: |
+          mkdir -p ../../out
+          set -o pipefail
+          mvn -B verify 2>&1 | tee ../../out/mvn.log
+      - name: Publicar
+        if: always()
+        run: |
+          cd out && git init -q && git checkout -q -b r && git add . && git -c user.name=ci -c user.email=ci@local commit -qm t
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:refs/heads/evidencias-tests-out
